@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "pumpkin-service": "apps/pumpkin-service"
+    "pumpkin-service": "apps/pumpkin-service",
+    "pumpkin-web": "apps/pumpkin-web",
+    "pumpkin-web-e2e": "apps/pumpkin-web-e2e"
   }
 }

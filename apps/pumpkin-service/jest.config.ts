@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'pumpkin-service',
   preset: '../../jest.preset.js',

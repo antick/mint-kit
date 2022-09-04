@@ -1,6 +1,6 @@
 {
-  "name": "pumpkin",
-  "version": "0.0.1",
+  "name": "mint-kit",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "start:app": "nx run-many --parallel --target=serve --projects=pumpkin-service,pumpkin-web --maxParallel=10",

@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/:/home/mint-kit/src
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGODB_URL=mongodb://mongo:27017/mint
+    depends_on:
+      - mongo
+    networks:
+      - node-network
+  mongo:
+    image: mongo:4.4.2-bionic
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    restart: always
+    networks:
+      - node-network
+
+volumes:
+  dbdata:
+
+networks:
+  node-network:
+    driver: bridge

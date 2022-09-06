@@ -23,7 +23,14 @@
     "start:app": "nx run-many --parallel --target=serve --projects=pumpkin-service,pumpkin-web --maxParallel=10",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "coverage": "jest -i --coverage",
+    "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
+    "docker": "docker-compose -f docker-compose.yml up",
+    "lint": "eslint ./src/ --ignore-path .gitignore",
+    "lint:fix": "npm run lint --fix",
+    "lint:watch": "npm run lint --watch",
+    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
     "@headlessui/react": "1.6.6",
@@ -91,6 +98,7 @@
     "@typescript-eslint/eslint-plugin": "5.36.2",
     "@typescript-eslint/parser": "5.33.1",
     "babel-jest": "28.1.3",
+    "coveralls": "3.1.1",
     "cypress": "10.3.1",
     "eslint": "8.22.0",
     "eslint-config-airbnb-base": "15.0.0",

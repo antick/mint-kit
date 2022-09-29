@@ -5,6 +5,7 @@ specifiers:
   '@heroicons/react': 1.0.6
   '@nestjs/common': 8.4.7
   '@nestjs/core': 8.4.7
+  '@nestjs/mongoose': ^9.2.0
   '@nestjs/platform-express': 8.4.7
   '@nestjs/schematics': 8.0.11
   '@nestjs/testing': 8.4.7
@@ -95,6 +96,7 @@ dependencies:
   '@heroicons/react': 1.0.6_react@18.2.0
   '@nestjs/common': 8.4.7_j5hagqx4mwzscud4kyjdvubauy
   '@nestjs/core': 8.4.7_vfcxgjfmqg6zhc6pfncoklq5wm
+  '@nestjs/mongoose': 9.2.0_ditnxfjp35nakvw522bwmlqmji
   '@nestjs/platform-express': 8.4.7_7tsmhnugyerf5okgqzer2mfqme
   '@nrwl/next': 14.6.4_j5ckg4bo74dxdax7fqzkbbooku
   autoprefixer: 10.4.8_postcss@8.4.16
@@ -1951,6 +1953,22 @@ packages:
       uuid: 8.3.2
     transitivePeerDependencies:
       - encoding
+
+  /@nestjs/mongoose/9.2.0_ditnxfjp35nakvw522bwmlqmji:
+    resolution: {integrity: sha512-fC33b8nwR7C3y6hlTyKjiHQVU57SFOd3Dwa6alWj3BOhK5bHt8Ld6qOK2G35/XXPHjtSIk3LIKEqwyK5xGcmBA==}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0
+      '@nestjs/core': ^8.0.0 || ^9.0.0
+      mongoose: ^6.0.2
+      reflect-metadata: ^0.1.12
+      rxjs: ^7.0.0
+    dependencies:
+      '@nestjs/common': 8.4.7_j5hagqx4mwzscud4kyjdvubauy
+      '@nestjs/core': 8.4.7_vfcxgjfmqg6zhc6pfncoklq5wm
+      mongoose: 6.5.4
+      reflect-metadata: 0.1.13
+      rxjs: 7.5.6
+    dev: false
 
   /@nestjs/platform-express/8.4.7_7tsmhnugyerf5okgqzer2mfqme:
     resolution: {integrity: sha512-lPE5Ltg2NbQGRQIwXWY+4cNrXhJdycbxFDQ8mNxSIuv+LbrJBIdEB/NONk+LLn9N/8d2+I2LsIETGQrPvsejBg==}

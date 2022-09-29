@@ -43,4 +43,4 @@ export default {
   refreshTokens,
   register,
   login
-}
+};

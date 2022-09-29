@@ -8,8 +8,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/mint-express",
-        "main": "apps/mint-express/src/main.ts",
-        "tsConfig": "apps/mint-express/tsconfig.app.json",
+        "main": "apps/mint-express/src/main.js",
         "assets": ["apps/mint-express/src/assets"]
       },
       "configurations": {
@@ -19,8 +18,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/mint-express/src/environments/environment.ts",
-              "with": "apps/mint-express/src/environments/environment.prod.ts"
+              "replace": "apps/mint-express/src/environments/environment.js",
+              "with": "apps/mint-express/src/environments/environment.prod.js"
             }
           ]
         }
@@ -41,14 +40,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/mint-express/**/*.ts"]
+        "lintFilePatterns": ["apps/mint-express/**/*.js"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/mint-express"],
       "options": {
-        "jestConfig": "apps/mint-express/jest.config.ts",
+        "jestConfig": "apps/mint-express/jest.config.js",
         "passWithNoTests": true
       }
     }

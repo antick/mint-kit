@@ -1,4 +1,6 @@
-import { Schema, SchemaTypes, model, Document, PaginateModel } from 'mongoose';
+import {
+  Schema, SchemaTypes, model, Document, PaginateModel
+} from 'mongoose';
 import * as paginate from 'mongoose-paginate-v2';
 import * as bcrypt from 'bcryptjs';
 import * as validator from 'validator';

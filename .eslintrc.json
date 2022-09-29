@@ -2,16 +2,23 @@
   "root": true,
   "extends": [
     "airbnb-base",
-    "plugin:jest/all",
     "plugin:security/recommended"
   ],
   "ignorePatterns": ["**/*"],
   "plugins": [
-    "jest",
     "security",
     "@nrwl/nx"
   ],
   "overrides": [
+    {
+      "files": ["*.spec.js", "*.spec.ts", "*.test.js", "*.test.ts"],
+      "extends": [
+        "plugin:jest/all"
+      ],
+      "plugins": [
+        "jest"
+      ]
+    },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
@@ -32,12 +39,24 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.base.json"
+      },
+      "rules": {
+        "@typescript-eslint/unbound-method": "error"
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@nrwl/nx/typescript"
+      ]
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
+      "extends": [
+        "plugin:@nrwl/nx/javascript"
+      ],
       "rules": {}
     }
   ],
@@ -58,6 +77,7 @@
     ],
     "import/newline-after-import": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
     "indent": [
       "warn",
       2
@@ -100,5 +120,12 @@
       "error",
       "always"
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }

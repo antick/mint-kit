@@ -9,7 +9,8 @@
       "options": {
         "outputPath": "dist/apps/mint-express",
         "main": "apps/mint-express/src/main.js",
-        "assets": ["apps/mint-express/src/assets"]
+        "assets": ["apps/mint-express/src/assets"],
+        "tsConfig": "apps/mint-express/tsconfig.json"
       },
       "configurations": {
         "production": {

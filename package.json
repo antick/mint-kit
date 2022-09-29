@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "start": "nx run-many --parallel --target=serve --projects=mint-express,pumpkin-web --maxParallel=10",
+    "start:express": "nx serve mint-express",
     "start:nest": "nx serve mint-nest",
     "build": "nx build",
     "test": "nx test",

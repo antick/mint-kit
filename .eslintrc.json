@@ -2,19 +2,17 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "plugins": [
-    "@typescript-eslint",
     "security",
     "@nrwl/nx"
   ],
   "extends": [
     "airbnb-base",
-    "airbnb-typescript/base",
     "plugin:security/recommended",
     "plugin:import/recommended"
   ],
   "overrides": [
     {
-      "files": ["*.spec.js", "*.spec.ts", "*.test.js", "*.test.ts"],
+      "files": ["*.spec.js", "*.spec.ts", "*.test.js", "*.test.ts", "*/tests/*.js", "*/tests/*.ts"],
       "extends": [
         "plugin:jest/all"
       ],
@@ -46,10 +44,18 @@
       "parserOptions": {
         "project": "tsconfig.base.json"
       },
+      "plugins": [
+        "@typescript-eslint"
+      ],
       "rules": {
-        "@typescript-eslint/unbound-method": "error"
+        "@typescript-eslint/unbound-method": "error",
+        "@typescript-eslint/comma-dangle": [
+          "error",
+          "never"
+        ]
       },
       "extends": [
+        "airbnb-typescript/base",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@nrwl/nx/typescript"
@@ -69,10 +75,6 @@
       "as-needed"
     ],
     "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "@typescript-eslint/comma-dangle": [
       "error",
       "never"
     ],
@@ -99,6 +101,7 @@
         "code": 130
       }
     ],
+    "new-cap": "off",
     "no-confusing-arrow": 0,
     "no-console": "error",
     "no-multi-str": 0,

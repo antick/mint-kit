@@ -70,7 +70,7 @@ specifiers:
   node-mocks-http: 1.11.0
   nodemailer: 6.7.8
   nx: 14.6.4
-  passport: 0.4.1
+  passport: 0.6.0
   passport-jwt: 4.0.0
   postcss: 8.4.16
   prettier: 2.7.1
@@ -118,7 +118,7 @@ dependencies:
   multer: 1.4.5-lts.1
   next: 12.2.5_qugu52izettqdqqm5qcjcltcia
   nodemailer: 6.7.8
-  passport: 0.4.1
+  passport: 0.6.0
   passport-jwt: 4.0.0
   postcss: 8.4.16
   react: 18.2.0
@@ -8656,12 +8656,13 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
-  /passport/0.4.1:
-    resolution: {integrity: sha512-IxXgZZs8d7uFSt3eqNjM9NQ3g3uQCW5avD8mRNoXV99Yig50vjuaez6dQK2qC0kVWPRTujxY0dWgGfT09adjYg==}
+  /passport/0.6.0:
+    resolution: {integrity: sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug==}
     engines: {node: '>= 0.4.0'}
     dependencies:
       passport-strategy: 1.0.0
       pause: 0.0.1
+      utils-merge: 1.0.1
     dev: false
 
   /path-exists/3.0.0:
@@ -10715,7 +10716,7 @@ packages:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
   /utils-merge/1.0.1:
-    resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
+    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
   /uuid/3.4.0:

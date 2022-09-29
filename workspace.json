@@ -3,7 +3,7 @@
   "version": 2,
   "projects": {
     "mint-express": "apps/mint-express",
-    "pumpkin-service": "apps/pumpkin-service",
+    "mint-nest": "apps/mint-nest",
     "pumpkin-web": "apps/pumpkin-web",
     "pumpkin-web-e2e": "apps/pumpkin-web-e2e"
   }

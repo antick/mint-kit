@@ -25,7 +25,7 @@
       "dependsOn": ["^build"]
     }
   },
-  "defaultProject": "pumpkin-service",
+  "defaultProject": "mint-nest",
   "generators": {
     "@nrwl/react": {
       "application": {

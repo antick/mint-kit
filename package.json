@@ -20,16 +20,16 @@
     "nx"
   ],
   "scripts": {
-    "start:app": "nx run-many --parallel --target=serve --projects=pumpkin-service,pumpkin-web --maxParallel=10",
-    "start": "nx serve",
+    "start": "nx run-many --parallel --target=serve --projects=mint-express,pumpkin-web --maxParallel=10",
+    "start:nest": "nx serve mint-nest",
     "build": "nx build",
     "test": "nx test",
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "docker": "docker-compose -f docker-compose.yml up",
     "lint": "eslint ./src/ --ignore-path .gitignore",
-    "lint:fix": "npm run lint --fix",
-    "lint:watch": "npm run lint --watch",
+    "lint:fix": "pnpm run lint --fix",
+    "lint:watch": "pnpm run lint --watch",
     "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {

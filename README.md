@@ -217,7 +217,7 @@ To maintain a consistent coding style across different IDEs, the project contain
 
 ## Generate an application
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Run `pnpm nx g @nrwl/react:app my-app` to generate an application.
 
 > You can use any of the plugins above to generate applications as well.
 
@@ -225,11 +225,25 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 ## Generate a library
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Run `pnpm nx g @nrwl/react:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
 Libraries are shareable across libraries and applications. They can be imported from `@mint-kint/mylib`.
+
+## Remove a workspace
+
+Remove my-feature-lib from the workspace:
+
+```
+nx g @nrwl/workspace:remove my-feature-lib
+```
+
+Force removal of my-feature-lib from the workspace:
+
+```
+nx g @nrwl/workspace:remove my-feature-lib --forceRemove
+```
 
 ## Development server
 

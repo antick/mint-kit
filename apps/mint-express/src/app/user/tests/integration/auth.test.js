@@ -6,15 +6,15 @@ import * as moment from 'moment';
 import * as bcrypt from 'bcryptjs';
 import * as app from '../../../../main';
 import config from '../../../../config';
-import auth from '../../middlewares/auth.middleware';
-import tokenService from '../../services/token.service';
-import emailService from '../../services/email.service';
+import auth from '../../middlewares/auth.middleware.js';
+import tokenService from '../../services/token.service.js';
+import emailService from '../../services/email.service.js';
 import BaseError from '../../../../middlewares/errors/BaseError';
-import setupTestDB from '../../../../utils/setupTestDB';
-import User from '../../models/user.model';
-import Token from '../../models/token.model';
-import { rolePermissions } from '../../config/roles';
-import { userOne, admin, insertUsers } from '../fixtures/user.fixture';
+import setupTestDB from '../../../../tests/setupTestDb';
+import User from '../../models/user.model.js';
+import Token from '../../models/token.model.js';
+import { rolePermissions } from '../../config/roles.js';
+import { userOne, admin, insertUsers } from '../fixtures/user.fixture.js';
 import {
   userOneAccessToken,
   userOneRefreshToken,
@@ -22,7 +22,7 @@ import {
   adminRefreshToken,
   saveTokens,
   saveAdminToken
-} from '../fixtures/token.fixture';
+} from '../fixtures/token.fixture.js';
 
 setupTestDB();
 

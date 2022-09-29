@@ -1,6 +1,4 @@
-import {
-  Schema, SchemaTypes, model, Document, PaginateModel
-} from 'mongoose';
+import { Schema, SchemaTypes, model } from 'mongoose';
 import * as paginate from 'mongoose-paginate-v2';
 import * as bcrypt from 'bcryptjs';
 import * as validator from 'validator';
@@ -8,19 +6,7 @@ import { roles } from '../config/roles';
 
 const { String } = SchemaTypes;
 
-interface IUser extends Document {
-  name: string;
-  email: string;
-  password: string;
-  avatar?: string;
-  role: string;
-}
-
-interface IUserDocument extends IUser {
-  isPasswordMatch(password: string): Promise<boolean>;
-}
-
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema(
   {
     name: {
       type: String,
@@ -87,6 +73,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-const User = model<IUserDocument, PaginateModel<IUserDocument>>('User', userSchema);
+const User = model('User', userSchema);
 
 export default User;

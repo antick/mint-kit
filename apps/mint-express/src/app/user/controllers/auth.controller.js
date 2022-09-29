@@ -2,7 +2,7 @@ import * as express from 'express';
 import * as httpStatus from 'http-status';
 import validationMiddleware from '../../../middlewares/validation.middleware';
 import { controller } from '../../../utils';
-import authValidator from './validators/auth.validator';
+import authValidator from './validators/auth.validator.js';
 import userService from '../services/user.service';
 import emailService from '../services/email.service';
 import authService from '../services/auth.service';

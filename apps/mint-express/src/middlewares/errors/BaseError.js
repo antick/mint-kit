@@ -3,9 +3,6 @@
  * This empowers all the custom error messages
  */
 class BaseError extends Error {
-  public statusCode: number;
-  public isOperational: boolean;
-
   constructor(statusCode, message, isOperational = true, stack = '') {
     super(message);
 

@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _ from 'lodash';
 import * as express from 'express';
 import * as httpStatus from 'http-status';
 import validationMiddleware from '../../../middlewares/validation.middleware';

@@ -2,9 +2,9 @@ import * as request from 'supertest';
 import * as faker from 'faker';
 import * as httpStatus from 'http-status';
 import * as app from '../../../../main';
-import setupTestDB from '../../../../utils/setupTestDB';
-import User from '../../models/user.model';
-import { userOne, userTwo, admin, insertUsers } from '../fixtures/user.fixture';
+import setupTestDB from '../../../../tests/setupTestDb';
+import User from '../../models/user.model.js';
+import { userOne, userTwo, admin, insertUsers } from '../fixtures/user.fixture.js';
 import {
   userOneAccessToken,
   userOneRefreshToken,
@@ -12,7 +12,7 @@ import {
   adminRefreshToken,
   saveTokens,
   saveAdminToken
-} from '../fixtures/token.fixture';
+} from '../fixtures/token.fixture.js';
 
 setupTestDB();
 

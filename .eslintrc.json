@@ -1,13 +1,16 @@
 {
   "root": true,
-  "extends": [
-    "airbnb-base",
-    "plugin:security/recommended"
-  ],
   "ignorePatterns": ["**/*"],
   "plugins": [
+    "@typescript-eslint",
     "security",
     "@nrwl/nx"
+  ],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:security/recommended",
+    "plugin:import/recommended"
   ],
   "overrides": [
     {
@@ -69,6 +72,10 @@
       "error",
       "never"
     ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "never"
+    ],
     "consistent-return": "off",
     "func-names": "off",
     "function-paren-newline": [
@@ -120,12 +127,5 @@
       "error",
       "always"
     ]
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
   }
 }

@@ -40,6 +40,7 @@ specifiers:
   dotenv: 10.0.0
   eslint: 8.22.0
   eslint-config-airbnb-base: 15.0.0
+  eslint-config-airbnb-typescript: 17.0.0
   eslint-config-next: 12.2.5
   eslint-config-prettier: 8.1.0
   eslint-plugin-cypress: 2.12.1
@@ -159,6 +160,7 @@ devDependencies:
   cypress: 10.3.1
   eslint: 8.22.0
   eslint-config-airbnb-base: 15.0.0_2iahngt3u2tkbdlu6s4gkur3pu
+  eslint-config-airbnb-typescript: 17.0.0_tmpszh77myycueielhrhpsr7ei
   eslint-config-next: 12.2.5_4rv7y5c6xz3vfxwhbrcxxi73bq
   eslint-config-prettier: 8.1.0_eslint@8.22.0
   eslint-plugin-cypress: 2.12.1_eslint@8.22.0
@@ -5423,6 +5425,21 @@ packages:
       object.assign: 4.1.2
       object.entries: 1.1.5
       semver: 6.3.0
+    dev: true
+
+  /eslint-config-airbnb-typescript/17.0.0_tmpszh77myycueielhrhpsr7ei:
+    resolution: {integrity: sha512-elNiuzD0kPAPTXjFWg+lE24nMdHMtuxgYoD30OyMD6yrW1AhFZPAg27VX7d3tzOErw+dgJTNWfRSDqEcXb4V0g==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.13.0
+      '@typescript-eslint/parser': ^5.0.0
+      eslint: ^7.32.0 || ^8.2.0
+      eslint-plugin-import: ^2.25.3
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.36.2_vsoshirnpb7xw6mr7xomgfas2i
+      '@typescript-eslint/parser': 5.33.1_4rv7y5c6xz3vfxwhbrcxxi73bq
+      eslint: 8.22.0
+      eslint-config-airbnb-base: 15.0.0_2iahngt3u2tkbdlu6s4gkur3pu
+      eslint-plugin-import: 2.26.0_3bh5nkk7utn7e74vrwtv6rxmt4
     dev: true
 
   /eslint-config-next/12.2.5_4rv7y5c6xz3vfxwhbrcxxi73bq:

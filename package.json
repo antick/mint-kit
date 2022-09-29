@@ -102,6 +102,7 @@
     "cypress": "10.3.1",
     "eslint": "8.22.0",
     "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "2.12.1",

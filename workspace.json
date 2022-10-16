@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "mint-docusaurus": "apps/mint-docusaurus",
     "mint-express": "apps/mint-express",
     "mint-nest": "apps/mint-nest",
     "pumpkin-web": "apps/pumpkin-web",

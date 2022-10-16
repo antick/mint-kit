@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "start": "nx run-many --parallel --target=serve --projects=mint-express,pumpkin-web --maxParallel=10",
+    "start:docusaurus": "nx serve mint-docusaurus",
     "start:express": "nx serve mint-express",
     "start:nest": "nx serve mint-nest",
     "build": "nx build",
@@ -34,8 +35,12 @@
     "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
+    "@docusaurus/core": "2.0.0-beta.13",
+    "@docusaurus/preset-classic": "2.0.0-beta.13",
+    "@docusaurus/types": "2.0.0-beta.13",
     "@headlessui/react": "1.6.6",
     "@heroicons/react": "1.0.6",
+    "@mdx-js/react": "^1.6.21",
     "@nestjs/common": "8.4.7",
     "@nestjs/core": "8.4.7",
     "@nestjs/mongoose": "^9.2.0",
@@ -43,6 +48,7 @@
     "@nrwl/next": "14.6.4",
     "autoprefixer": "10.4.8",
     "bcryptjs": "2.4.3",
+    "clsx": "^1.1.1",
     "compression": "1.7.4",
     "core-js": "3.24.1",
     "cors": "2.8.5",
@@ -65,6 +71,7 @@
     "passport": "0.6.0",
     "passport-jwt": "4.0.0",
     "postcss": "8.4.16",
+    "prism-react-renderer": "^1.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reflect-metadata": "0.1.13",
@@ -77,6 +84,7 @@
     "xss-clean": "0.1.1"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "2.0.0-beta.13",
     "@nestjs/schematics": "8.0.11",
     "@nestjs/testing": "8.4.7",
     "@nrwl/cli": "14.6.4",
@@ -91,6 +99,7 @@
     "@nrwl/react": "14.6.4",
     "@nrwl/web": "14.6.4",
     "@nrwl/workspace": "14.6.4",
+    "@nx-plus/docusaurus": "^14.1.0",
     "@testing-library/react": "13.3.0",
     "@types/express": "4.17.13",
     "@types/jest": "28.1.8",

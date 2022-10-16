@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+build
 /tmp
 /out-tsc
 
@@ -18,6 +19,7 @@ node_modules
 *.sublime-workspace
 
 # IDE - VSCode
+.history
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -40,3 +42,7 @@ testem.log
 Thumbs.db
 
 .env
+
+# Generated Docusaurus files
+.docusaurus/
+.cache-loader/

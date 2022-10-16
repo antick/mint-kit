@@ -1,6 +1,21 @@
 version: '3.7'
 
 services:
+  #  express:
+  #    build:
+  #      context: .
+  #      dockerfile: Dockerfile
+  #    volumes:
+  #      - ./src/:/home/mint-kit/src
+  #    ports:
+  #      - '3000:3000'
+  #    environment:
+  #      - MONGODB_URL=mongodb://mongo:27017/mint
+  #    depends_on:
+  #      - mongo
+  #    networks:
+  #      - node-network
+
   mongodb:
     image: mongo:5.0.12
     ports:
@@ -13,21 +28,6 @@ services:
     restart: on-failure
     networks:
       - node-network
-
-#  express:
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    volumes:
-#      - ./src/:/home/mint-kit/src
-#    ports:
-#      - '3000:3000'
-#    environment:
-#      - MONGODB_URL=mongodb://mongo:27017/mint
-#    depends_on:
-#      - mongo
-#    networks:
-#      - node-network
 
 volumes:
   mongodb-data:

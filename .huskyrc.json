@@ -1,0 +1,8 @@
+{
+  "hooks": {
+    "pre-commit": "pnpm lint",
+    "post-commit": "git status",
+    "post-checkout": "pnpm install",
+    "pre-push": "pnpm lint && pnpm test"
+  }
+}

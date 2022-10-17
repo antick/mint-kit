@@ -2,10 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "mint-docusaurus": "apps/mint-docusaurus",
-    "mint-express": "apps/mint-express",
-    "mint-nest": "apps/mint-nest",
-    "pumpkin-web": "apps/pumpkin-web",
-    "pumpkin-web-e2e": "apps/pumpkin-web-e2e"
+    "mint-docusaurus": "packages/mint-docusaurus",
+    "mint-express": "packages/mint-express",
+    "mint-nest": "packages/mint-nest",
+    "pumpkin-web": "packages/pumpkin-web",
+    "pumpkin-web-e2e": "packages/pumpkin-web-e2e"
   }
 }

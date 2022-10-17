@@ -3,9 +3,6 @@
   "version": 2,
   "projects": {
     "mint-docusaurus": "packages/mint-docusaurus",
-    "mint-express": "packages/mint-express",
-    "mint-nest": "packages/mint-nest",
-    "pumpkin-web": "packages/pumpkin-web",
-    "pumpkin-web-e2e": "packages/pumpkin-web-e2e"
+    "mint-express": "packages/mint-express"
   }
 }

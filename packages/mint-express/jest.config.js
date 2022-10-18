@@ -1,10 +1,18 @@
-export default {
-  displayName: 'mint-express',
-  preset: '../../jest.preset.js',
-  testEnvironment: 'node',
-  transform: {
-    '^.+\\.[tj]s$': 'ts-jest',
+module.exports = {
+  coveragePathIgnorePatterns: ['node_modules', 'src/config', 'src/app.js', 'tests'],
+  coverageReporters: ['text', 'lcov', 'clover', 'html'],
+  coverageThreshold: {
+    global: {
+      statements: 97.97,
+      branches: 93.33,
+      functions: 96.05,
+      lines: 97.91
+    }
   },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/mint-express',
+  restoreMocks: true,
+  testEnvironment: 'node',
+  testEnvironmentOptions: {
+    NODE_ENV: 'test'
+  },
+  testRegex: '((\\.|/*.)(test))\\.js?$'
 };

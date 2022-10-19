@@ -1,12 +1,12 @@
-import * as express from 'express';
-import * as httpStatus from 'http-status';
-import validationMiddleware from '../../../middlewares/validation.middleware';
-import { controller } from '../../../utils';
-import authValidator from './validators/auth.validator.js';
-import userService from '../services/user.service';
-import emailService from '../services/email.service';
-import authService from '../services/auth.service';
-import tokenService from '../services/token.service';
+const express = require('express');
+const httpStatus = require('http-status');
+const validationMiddleware = require('../../../middlewares/validation.middleware');
+const { controller } = require('../../../utils');
+const authValidator = require('./validators/auth.validator');
+const userService = require('../services/user.service');
+const emailService = require('../services/email.service');
+const authService = require('../services/auth.service');
+const tokenService = require('../services/token.service');
 
 const authController = express.Router();
 

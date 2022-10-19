@@ -1,7 +1,7 @@
-import * as passport from 'passport';
-import AuthError from '../../../middlewares/errors/AuthError';
-import ForbiddenError from '../../../middlewares/errors/ForbiddenError';
-import { rolePermissions } from '../config/roles';
+const passport = require('passport');
+const AuthError = require('../../../middlewares/errors/AuthError');
+const ForbiddenError = require('../../../middlewares/errors/ForbiddenError');
+const { rolePermissions } = require('../config/roles');
 
 const authorization = (req, resolve, reject, requiredPermissions) => async (err, user, info) => {
   if (err || info || !user) {

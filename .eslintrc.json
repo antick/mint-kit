@@ -1,19 +1,15 @@
 {
   "plugins": [
-    "jest",
     "security"
   ],
 
   "extends": [
     "airbnb-base",
-    "plugin:jest/all",
     "plugin:security/recommended"
   ],
 
   "env": {
     "node": true,
-    "jest": true,
-    "jest/globals": true,
     "es2020": true,
     "mongo": true
   },
@@ -82,5 +78,26 @@
       "error",
       "always"
     ]
-  }
+  },
+
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "plugins": [
+        "jest"
+      ],
+
+      "env": {
+        "node": true,
+        "jest": true,
+        "jest/globals": true,
+        "es2020": true,
+        "mongo": true
+      },
+
+      "extends": [
+        "plugin:jest/all"
+      ]
+    }
+  ]
 }

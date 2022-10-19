@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon src/index.js",
+    "start": "cross-env NODE_ENV=development nodemon src/main.js",
     "test": "npm run lint && jest -i --coverage",
     "start:prod": "pm2 start ecosystem.config.js --no-daemon",
     "test:watch": "jest --watchAll",

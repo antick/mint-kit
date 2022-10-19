@@ -21,11 +21,8 @@
     "nx"
   ],
   "scripts": {
-    "start": "nx run-many --parallel --target=serve --projects=mint-express,pumpkin-web --maxParallel=10",
-    "start:docusaurus": "nx serve mint-docusaurus",
-    "start:express": "nx serve mint-express",
-    "build": "nx build",
-    "test": "nx test",
+    "start:docusaurus": "pnpm --filter mint-docusaurus start",
+    "start:express": "pnpm --filter mint-express start",
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "docker": "docker-compose -f docker-compose.yml up",

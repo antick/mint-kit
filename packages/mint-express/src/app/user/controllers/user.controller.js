@@ -1,14 +1,14 @@
-import _ from 'lodash';
-import * as express from 'express';
-import * as httpStatus from 'http-status';
-import validationMiddleware from '../../../middlewares/validation.middleware';
-import authMiddleware from '../middlewares/auth.middleware';
-import userValidation from './validators/user.validator';
-import uploadMiddleware from '../middlewares/upload.middleware';
-import NotFoundError from '../../../middlewares/errors/NotFoundError';
-import { controller, pick } from '../../../utils';
-import userService from '../services/user.service';
-import tokenService from '../services/token.service';
+const _ = require('lodash');
+const express = require('express');
+const httpStatus = require('http-status');
+const validationMiddleware = require('../../../middlewares/validation.middleware');
+const authMiddleware = require('../middlewares/auth.middleware');
+const userValidation = require('./validators/user.validator');
+const uploadMiddleware = require('../middlewares/upload.middleware');
+const NotFoundError = require('../../../middlewares/errors/NotFoundError');
+const { controller, pick } = require('../../../utils');
+const userService = require('../services/user.service');
+const tokenService = require('../services/token.service');
 
 const userController = express.Router();
 

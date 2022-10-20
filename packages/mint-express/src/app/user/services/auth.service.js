@@ -1,7 +1,7 @@
-import tokenService from './token.service';
-import userService from './user.service';
-import Token from '../models/token.model';
-import AuthError from '../../../middlewares/errors/AuthError';
+const tokenService = require('./token.service');
+const userService = require('./user.service');
+const Token = require('../models/token.model');
+const AuthError = require('../../../middlewares/errors/AuthError');
 
 const authenticate = async (email, password) => {
   const user = await userService.getUserByEmail(email);
@@ -46,7 +46,7 @@ const resetPassword = async (resetPasswordToken, newPassword) => {
   }
 };
 
-export default {
+module.exports = {
   resetPassword,
   authenticate,
   refreshAuth

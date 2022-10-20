@@ -1,9 +1,9 @@
-import jwt from 'jsonwebtoken';
-import * as moment from 'moment';
-import config from '../../../config';
-import userService from './user.service';
-import Token from '../models/token.model';
-import NotFoundError from '../../../middlewares/errors/NotFoundError';
+const jwt = require('jsonwebtoken');
+const moment = require('moment');
+const config = require('../../../config');
+const userService = require('./user.service');
+const Token = require('../models/token.model');
+const NotFoundError = require('../../../middlewares/errors/NotFoundError');
 
 const generateToken = (userId, expires, secret = config.jwt.secret) => {
   const payload = {
@@ -82,7 +82,7 @@ const deleteRefreshToken = async refreshToken => {
   return token;
 };
 
-export default {
+module.exports = {
   generateResetPasswordToken,
   generateAuthTokens,
   deleteRefreshToken,

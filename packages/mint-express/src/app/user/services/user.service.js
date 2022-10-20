@@ -1,9 +1,9 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import { promisify } from 'util';
-import BadRequestError from '../../../middlewares/errors/BadRequestError';
-import NotFoundError from '../../../middlewares/errors/NotFoundError';
-import User from '../models/user.model';
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
+const BadRequestError = require('../../../middlewares/errors/BadRequestError');
+const NotFoundError = require('../../../middlewares/errors/NotFoundError');
+const User = require('../models/user.model');
 
 const unlinkAsync = promisify(fs.unlink);
 
@@ -81,7 +81,7 @@ const deleteUserById = async userId => {
   return user;
 };
 
-export default {
+module.exports = {
   deleteUserById,
   updateUserById,
   getUserByEmail,

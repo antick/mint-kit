@@ -1,5 +1,5 @@
-import * as Joi from 'joi';
-import { password } from './custom.validator';
+const Joi = require('joi');
+const { password } = require('./custom.validator');
 
 const register = {
   body: Joi.object().keys({
@@ -37,7 +37,7 @@ const resetPassword = {
   })
 };
 
-export default {
+module.exports = {
   forgotPassword,
   resetPassword,
   refreshTokens,

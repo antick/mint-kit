@@ -78,4 +78,6 @@ userController
     res.status(httpStatus.NO_CONTENT).send();
   }));
 
-export default userController;
+module.exports = {
+  userController
+};

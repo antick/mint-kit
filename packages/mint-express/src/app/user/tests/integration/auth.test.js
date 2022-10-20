@@ -1,28 +1,28 @@
-import * as request from 'supertest';
-import * as faker from 'faker';
-import * as httpStatus from 'http-status';
-import * as httpMocks from 'node-mocks-http';
-import * as moment from 'moment';
-import * as bcrypt from 'bcryptjs';
-import * as app from '../../../../main';
-import config from '../../../../config';
-import auth from '../../middlewares/auth.middleware.js';
-import tokenService from '../../services/token.service.js';
-import emailService from '../../services/email.service.js';
-import BaseError from '../../../../middlewares/errors/BaseError';
-import setupTestDB from '../../../../tests/setupTestDb';
-import User from '../../models/user.model.js';
-import Token from '../../models/token.model.js';
-import { rolePermissions } from '../../config/roles.js';
-import { userOne, admin, insertUsers } from '../fixtures/user.fixture.js';
-import {
+const request = require('supertest');
+const faker = require('faker');
+const httpStatus = require('http-status');
+const httpMocks = require('node-mocks-http');
+const moment = require('moment');
+const bcrypt = require('bcryptjs');
+const app = require('../../../../main');
+const config = require('../../../../config');
+const auth = require('../../middlewares/auth.middleware.js');
+const tokenService = require('../../services/token.service.js');
+const emailService = require('../../services/email.service.js');
+const BaseError = require('../../../../middlewares/errors/BaseError');
+const setupTestDB = require('../../../../tests/setupTestDb');
+const User = require('../../models/user.model');
+const Token = require('../../models/token.model');
+const { rolePermissions } = require('../../config/roles');
+const { userOne, admin, insertUsers } = require('../fixtures/user.fixture');
+const {
   userOneAccessToken,
   userOneRefreshToken,
   adminAccessToken,
   adminRefreshToken,
   saveTokens,
   saveAdminToken
-} from '../fixtures/token.fixture.js';
+} = require('../fixtures/token.fixture');
 
 setupTestDB();
 

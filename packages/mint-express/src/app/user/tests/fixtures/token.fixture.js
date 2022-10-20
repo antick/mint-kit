@@ -1,7 +1,7 @@
-import * as moment from 'moment';
-import config from '../../../../config';
-import tokenService from '../../services/token.service';
-import { userOne, admin } from './user.fixture';
+const moment = require('moment');
+const config = require('../../../../config');
+const tokenService = require('../../services/token.service');
+const { userOne, admin } = require('./user.fixture');
 
 const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'minutes');
 const refreshTokenExpires = moment().add(config.jwt.refreshExpirationDays, 'days');
@@ -20,7 +20,7 @@ const saveAdminToken = async refreshToken => {
   await tokenService.saveToken(refreshToken, admin._id, refreshTokenExpires, 'refresh');
 };
 
-export {
+module.exports = {
   userOneRefreshToken,
   accessTokenExpires,
   userOneAccessToken,

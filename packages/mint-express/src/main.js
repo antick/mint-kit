@@ -1,18 +1,18 @@
-import * as express from 'express';
-import * as mongoose from 'mongoose';
-import * as helmet from 'helmet';
-import * as xss from 'xss-clean';
-import * as mongoSanitize from 'express-mongo-sanitize';
-import * as compression from 'compression';
-import * as cors from 'cors';
-import * as passport from 'passport';
-import config from './config';
-import morgan from './utils/morgan';
-import logger from './utils/logger';
-import { jwtStrategy } from './app/user/middlewares/jwt.middleware';
-import { authLimiter } from './middlewares/rate-limit.middleware';
-import { notFoundErrorHandler, errorHandler } from './middlewares/error.middlware';
-import routes from './routes';
+const express = require('express');
+const mongoose = require('mongoose');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
+const compression = require('compression');
+const cors = require('cors');
+const passport = require('passport');
+const config = require('./config');
+const morgan = require('./utils/morgan');
+const logger = require('./utils/logger');
+const { jwtStrategy } = require('./app/user/middlewares/jwt.middleware');
+const { authLimiter } = require('./middlewares/rate-limit.middleware');
+const { notFoundErrorHandler, errorHandler } = require('./middlewares/error.middlware');
+const routes = require('./routes');
 
 const app = express();
 

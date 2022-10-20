@@ -1,5 +1,5 @@
-import * as faker from 'faker';
-import User from '../../models/user.model.js';
+const faker = require('faker');
+const User = require('../../models/user.model.js');
 
 describe('user model', () => {
   describe('user validation', () => {

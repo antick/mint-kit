@@ -1,18 +1,18 @@
-import * as request from 'supertest';
-import * as faker from 'faker';
-import * as httpStatus from 'http-status';
-import * as app from '../../../../main';
-import setupTestDB from '../../../../tests/setupTestDb';
-import User from '../../models/user.model.js';
-import { userOne, userTwo, admin, insertUsers } from '../fixtures/user.fixture.js';
-import {
+const request = require('supertest');
+const faker = require('faker');
+const httpStatus = require('http-status');
+const app = require('../../../../main');
+const setupTestDB = require('../../../../tests/setupTestDb');
+const User = require('../../models/user.model');
+const { userOne, userTwo, admin, insertUsers } = require('../fixtures/user.fixture');
+const {
   userOneAccessToken,
   userOneRefreshToken,
   adminAccessToken,
   adminRefreshToken,
   saveTokens,
   saveAdminToken
-} from '../fixtures/token.fixture.js';
+} = require('../fixtures/token.fixture');
 
 setupTestDB();
 

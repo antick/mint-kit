@@ -1,8 +1,8 @@
-import { Schema, SchemaTypes, model } from 'mongoose';
-import * as paginate from 'mongoose-paginate-v2';
-import * as bcrypt from 'bcryptjs';
-import * as validator from 'validator';
-import { roles } from '../config/roles';
+const { Schema, SchemaTypes, model } = require('mongoose');
+const paginate = require('mongoose-paginate-v2');
+const bcrypt = require('bcryptjs');
+const validator = require('validator');
+const { roles } = require('../config/roles');
 
 const { String } = SchemaTypes;
 
@@ -75,4 +75,6 @@ userSchema.pre('save', async function (next) {
 
 const User = model('User', userSchema);
 
-export default User;
+module.exports = {
+  User
+};

@@ -1,6 +1,6 @@
-import * as nodeMailer from 'nodemailer';
-import config from '../../../config';
-import logger from '../../../utils/logger';
+const nodeMailer = require('nodemailer');
+const config = require('../../../config');
+const logger = require('../../../utils/logger');
 
 const transport = nodeMailer.createTransport(config.email.smtp);
 
@@ -51,7 +51,7 @@ const sendWelcomeEmail = async to => {
   await sendEmail(to, subject, text);
 };
 
-export default {
+module.exports = {
   sendResetPasswordEmail,
   sendWelcomeEmail,
   transport,

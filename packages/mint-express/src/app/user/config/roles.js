@@ -8,7 +8,7 @@ const rolePermissions = new Map();
 rolePermissions.set(roles[0], ['login', 'getUsers', 'manageUsers']);
 rolePermissions.set(roles[1], ['login']);
 
-export {
+module.exports = {
   rolePermissions,
   roles
 };

@@ -1,7 +1,7 @@
-import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
-import config from '../../../config';
-import User from '../models/user.model';
-import Token from '../models/token.model';
+const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
+const config = require('../../../config');
+const User = require('../models/user.model');
+const Token = require('../models/token.model');
 
 const jwtOptions = {
   secretOrKey: config.jwt.secret,
@@ -21,6 +21,6 @@ const jwtVerify = async (payload, done) => {
 
 const jwtStrategy = new JwtStrategy(jwtOptions, jwtVerify);
 
-export {
+module.exports = {
   jwtStrategy
 };

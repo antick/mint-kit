@@ -32,4 +32,6 @@ const authMiddleware = (...requiredPermissions) => async (req, res, next) => new
   .then(() => next())
   .catch(err => next(err));
 
-export default authMiddleware;
+module.exports = {
+  authMiddleware
+};

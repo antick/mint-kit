@@ -1,4 +1,4 @@
-import { Schema, SchemaTypes, model } from 'mongoose';
+const { Schema, SchemaTypes, model } = require('mongoose');
 
 const {
   String, Date, Boolean, ObjectId
@@ -37,4 +37,6 @@ const tokenSchema = new Schema(
 
 const Token = model('Token', tokenSchema);
 
-export default Token;
+module.exports = {
+  Token
+};

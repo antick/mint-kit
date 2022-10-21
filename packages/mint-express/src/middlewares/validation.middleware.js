@@ -1,6 +1,6 @@
-import * as joi from 'joi';
-import { pick } from '../utils';
-import BadRequestError from './errors/BadRequestError';
+const joi = require('joi');
+const { pick } = require('../utils');
+const BadRequestError = require('./errors/BadRequestError');
 
 const validateMiddleware = schema => (req, res, next) => {
   const validSchema = pick(schema, ['params', 'query', 'body']);
@@ -19,4 +19,4 @@ const validateMiddleware = schema => (req, res, next) => {
   return next();
 };
 
-export default validateMiddleware;
+module.exports = validateMiddleware;

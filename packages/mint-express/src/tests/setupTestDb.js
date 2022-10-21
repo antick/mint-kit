@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import config from '../config';
+const mongoose = require('mongoose');
+const config = require('../config');
 
 const setupTestDB = () => {
   beforeAll(async () => {
@@ -9,7 +9,7 @@ const setupTestDB = () => {
   beforeEach(async () => {
     await Promise
       .all(Object.values(mongoose.connection.collections)
-      .map(collection => collection.deleteMany({})));
+        .map(collection => collection.deleteMany({})));
   });
 
   afterAll(async () => {
@@ -17,4 +17,4 @@ const setupTestDB = () => {
   });
 };
 
-export default setupTestDB;
+module.exports = setupTestDB;

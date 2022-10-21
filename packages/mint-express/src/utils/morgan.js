@@ -1,6 +1,6 @@
-import * as morgan from 'morgan';
-import config from '../config';
-import logger from './logger';
+const morgan = require('morgan');
+const config = require('../config');
+const logger = require('./logger');
 
 morgan.token('message', (req, res) => res.locals.errorMessage || '');
 

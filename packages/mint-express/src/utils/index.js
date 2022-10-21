@@ -24,7 +24,7 @@ const pick = (object, keys) => keys.reduce((obj, key) => {
   return obj;
 }, {});
 
-export {
+module.exports = {
   controller,
   pick
 };

@@ -1,5 +1,5 @@
-import * as winston from 'winston';
-import config from '../config';
+const winston = require('winston');
+const config = require('../config');
 
 const errorFormat = winston.format(info => {
   if (info instanceof Error) {
@@ -26,4 +26,4 @@ const logger = winston.createLogger({
   ]
 });
 
-export default logger;
+module.exports = logger;

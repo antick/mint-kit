@@ -1,5 +1,5 @@
-import * as httpStatus from 'http-status';
-import BaseError from './BaseError';
+const httpStatus = require('http-status');
+const BaseError = require('./BaseError');
 
 class BadRequestError {
   constructor(message) {
@@ -10,4 +10,4 @@ class BadRequestError {
   }
 }
 
-export default BadRequestError;
+module.exports = BadRequestError;

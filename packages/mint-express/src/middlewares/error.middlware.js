@@ -1,4 +1,4 @@
-import NotFoundError from './errors/NotFoundError';
+const NotFoundError = require('./errors/NotFoundError');
 
 const notFoundErrorHandler = (req, res, next) => {
   next(new NotFoundError('Resource not found'));

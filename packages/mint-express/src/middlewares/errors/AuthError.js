@@ -1,5 +1,5 @@
-import * as httpStatus from 'http-status';
-import BaseError from './BaseError';
+const httpStatus = require('http-status');
+const BaseError = require('./BaseError');
 
 class AuthError {
   constructor(message = 'Authentication required!') {
@@ -10,4 +10,4 @@ class AuthError {
   }
 }
 
-export default AuthError;
+module.exports = AuthError;

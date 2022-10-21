@@ -1,5 +1,5 @@
-import * as httpStatus from 'http-status';
-import BaseError from './BaseError';
+const httpStatus = require('http-status');
+const BaseError = require('./BaseError');
 
 class ForbiddenError {
   constructor(message = 'Not allowed') {
@@ -10,4 +10,4 @@ class ForbiddenError {
   }
 }
 
-export default ForbiddenError;
+module.exports = ForbiddenError;

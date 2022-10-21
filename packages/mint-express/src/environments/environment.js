@@ -1,3 +1,5 @@
-export const environment = {
-  production: false
+module.exports = {
+  environment: {
+    production: false
+  }
 };

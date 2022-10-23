@@ -1,7 +1,0 @@
-* text eol=lf
-* text=auto
-*.js text
-*.js eol=lf
-*.json eol=lf
-*.mp4 binary
-*.jpg binary

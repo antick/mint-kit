@@ -14,7 +14,7 @@
     "lint": "eslint ./src/ --ignore-path .gitignore",
     "lint:fix": "npm run lint --fix",
     "lint:watch": "npm run lint --watch",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install"
+    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",

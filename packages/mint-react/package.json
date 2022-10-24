@@ -29,7 +29,7 @@
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "docker": "docker-compose -f docker-compose.yml up",
     "docker:test": "docker-compose -f docker-compose.yml -f docker-compose.test.yml up",
-    "install:clean": "rm -rf node_modules/ && rm -f package-lock.json && npm install"
+    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "browserslist": {
     "production": [
@@ -62,8 +62,6 @@
     "history": "4.10.1",
     "jest-environment-jsdom": "27.5.1",
     "js-cookie": "2.2.1",
-    "lodash": "4.17.21",
-    "moment": "2.29.4",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-apexcharts": "1.4.0",
@@ -88,7 +86,6 @@
   },
   "devDependencies": {
     "@babel/core": "7.19.3",
-    "@babel/eslint-parser": "7.19.1",
     "@babel/plugin-transform-modules-commonjs": "7.18.6",
     "@babel/preset-env": "7.19.4",
     "@redux-devtools/core": "3.13.1",
@@ -102,11 +99,6 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "enzyme-to-json": "3.6.2",
-    "eslint": "8.22.0",
-    "eslint-config-airbnb-base": "14.2.1",
-    "eslint-plugin-cypress": "2.12.1",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "25.7.0",
     "eslint-plugin-jest-dom": "3.9.4",
     "eslint-plugin-react": "7.31.10",
     "eslint-plugin-testing-library": "4.12.4",

@@ -37,8 +37,11 @@
     "import/newline-after-import": "off",
     "import/no-extraneous-dependencies": "off",
     "indent": [
-      "warn",
-      2
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "jest/expect-expect": "off",
     "jest/no-hooks": "off",
@@ -82,39 +85,11 @@
 
   "overrides": [
     {
-      "files": ["*.test.js", "*.spec.js"],
-      "plugins": [
-        "jest"
-      ],
-
-      "env": {
-        "node": true,
-        "jest": true,
-        "jest/globals": true,
-        "es2020": true,
-        "mongo": true
-      },
-
-      "extends": [
-        "plugin:jest/all"
-      ]
-    },
-    {
-      "files": ["mint-react/src/**/*.js"],
-
-      "plugins": [
-        "jest",
-        "jest-dom"
-      ],
-
-      "parser": "@babel/eslint-parser",
+      "files": ["packages/mint-react/**/*.js"],
 
       "env": {
         "browser": true,
-        "es2020": true,
-        "jest": true,
-        "jest/globals": true,
-        "node": true
+        "es2020": true
       },
 
       "settings": {
@@ -125,13 +100,8 @@
 
       "extends": [
         "react-app",
-        "react-app/jest",
         "airbnb-base",
-        "plugin:jest/all",
-        "plugin:jest-dom/recommended",
-        "plugin:cypress/recommended",
-        "eslint:recommended",
-        "plugin:react/recommended"
+        "eslint:recommended"
       ],
 
       "rules": {
@@ -151,7 +121,6 @@
         ],
         "import/newline-after-import": "off",
         "import/no-extraneous-dependencies": "off",
-        "import/prefer-default-export": "off",
         "indent": [
           "error",
           2,
@@ -192,11 +161,36 @@
           "error",
           "single"
         ],
+        "security/detect-object-injection": "off",
         "semi": [
           "error",
           "always"
         ]
       }
+    },
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "plugins": [
+        "jest",
+        "jest-dom"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "env": {
+        "node": true,
+        "jest": true,
+        "jest/globals": true,
+        "es2020": true
+      },
+
+      "extends": [
+        "react-app/jest",
+        "plugin:jest/all",
+        "plugin:jest-dom/recommended",
+        "plugin:cypress/recommended",
+        "plugin:react/recommended"
+      ]
     }
   ]
 }

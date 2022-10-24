@@ -32,7 +32,9 @@
     "lint": "eslint ./src/ --ignore-path .gitignore",
     "lint:fix": "pnpm run lint --fix",
     "lint:watch": "pnpm run lint --watch",
-    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
+    "clean:express": "pnpm --filter mint-express install:clean",
+    "clean:react": "pnpm --filter mint-react install:clean",
+    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm clean:express && pnpm clean:react && pnpm install"
   },
   "dependencies": {
     "dotenv": "10.0.0",
@@ -41,6 +43,7 @@
     "moment": "2.29.4"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.19.1",
     "eslint": "8.22.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-cypress": "2.12.1",

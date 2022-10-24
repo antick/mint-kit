@@ -7,21 +7,21 @@ export default [
   {
     component: Login,
     path: '/login',
-    public: true
+    public: true,
   },
   {
     component: Register,
     path: '/register',
-    public: true
+    public: true,
   },
   {
     component: ForgotPassword,
     path: '/forgot-password',
-    public: true
+    public: true,
   },
   {
     component: ResetPassword,
     path: '/reset-password',
-    public: true
-  }
+    public: true,
+  },
 ];

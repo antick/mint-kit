@@ -21,7 +21,7 @@ const {
   adminAccessToken,
   adminRefreshToken,
   saveTokens,
-  saveAdminToken
+  saveAdminToken,
 } = require('../fixtures/token.fixture');
 
 setupTestDB();
@@ -34,7 +34,7 @@ describe('auth routes', () => {
       newUser = {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
-        password: 'password1'
+        password: 'password1',
       };
 
       jest.spyOn(emailService.transport, 'sendMail').mockResolvedValue('');
@@ -54,7 +54,7 @@ describe('auth routes', () => {
         id: expect.anything(),
         name: newUser.name,
         email: newUser.email,
-        role: 'user'
+        role: 'user',
       });
 
       const dbUser = await User.findById(res.body.user.id);
@@ -64,18 +64,18 @@ describe('auth routes', () => {
       expect(dbUser).toMatchObject({
         name: newUser.name,
         email: newUser.email,
-        role: 'user'
+        role: 'user',
       });
       expect(res.body.tokens).toStrictEqual({
         access: {
           token: expect.anything(),
           expiresIn: expect.anything(),
-          expires: expect.anything()
+          expires: expect.anything(),
         },
         refresh: {
           token: expect.anything(),
-          expires: expect.anything()
-        }
+          expires: expect.anything(),
+        },
       });
     });
 
@@ -131,7 +131,7 @@ describe('auth routes', () => {
 
       const loginCredentials = {
         email: userOne.email,
-        password: userOne.password
+        password: userOne.password,
       };
 
       const res = await request(app)
@@ -143,26 +143,26 @@ describe('auth routes', () => {
         id: expect.anything(),
         name: userOne.name,
         email: userOne.email,
-        role: userOne.role
+        role: userOne.role,
       });
 
       expect(res.body.tokens).toStrictEqual({
         access: {
           token: expect.anything(),
           expiresIn: expect.anything(),
-          expires: expect.anything()
+          expires: expect.anything(),
         },
         refresh: {
           token: expect.anything(),
-          expires: expect.anything()
-        }
+          expires: expect.anything(),
+        },
       });
     });
 
     it('should return 401 error if there are no user with specified email', async () => {
       const loginCredentials = {
         email: userOne.email,
-        password: userOne.password
+        password: userOne.password,
       };
 
       const res = await request(app)
@@ -172,7 +172,7 @@ describe('auth routes', () => {
 
       expect(res.body).toStrictEqual({
         status: httpStatus.UNAUTHORIZED,
-        message: 'Incorrect email or password'
+        message: 'Incorrect email or password',
       });
     });
 
@@ -181,7 +181,7 @@ describe('auth routes', () => {
 
       const loginCredentials = {
         email: userOne.email,
-        password: 'wrongPassword1'
+        password: 'wrongPassword1',
       };
 
       const res = await request(app)
@@ -191,7 +191,7 @@ describe('auth routes', () => {
 
       expect(res.body).toStrictEqual({
         status: httpStatus.UNAUTHORIZED,
-        message: 'Incorrect email or password'
+        message: 'Incorrect email or password',
       });
     });
   });
@@ -211,12 +211,12 @@ describe('auth routes', () => {
         access: {
           token: expect.anything(),
           expiresIn: expect.anything(),
-          expires: expect.anything()
+          expires: expect.anything(),
         },
         refresh: {
           token: expect.anything(),
-          expires: expect.anything()
-        }
+          expires: expect.anything(),
+        },
       });
 
       const dbRefreshTokenDoc = await Token.findOne({ token: res.body.refresh.token });
@@ -473,7 +473,7 @@ describe('auth middleware', () => {
 
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(
-      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' })
+      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' }),
     );
   });
 
@@ -487,7 +487,7 @@ describe('auth middleware', () => {
 
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(
-      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' })
+      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' }),
     );
   });
 
@@ -503,7 +503,7 @@ describe('auth middleware', () => {
 
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(
-      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' })
+      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' }),
     );
   });
 
@@ -519,7 +519,7 @@ describe('auth middleware', () => {
 
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(
-      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' })
+      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' }),
     );
   });
 
@@ -531,7 +531,7 @@ describe('auth middleware', () => {
 
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(
-      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' })
+      expect.objectContaining({ statusCode: httpStatus.UNAUTHORIZED, message: 'Authentication required!' }),
     );
   });
 
@@ -547,7 +547,7 @@ describe('auth middleware', () => {
     expect(next).toHaveBeenCalledWith(expect.any(BaseError));
     expect(next).toHaveBeenCalledWith(expect.objectContaining({
       statusCode: httpStatus.FORBIDDEN,
-      message: 'Not allowed'
+      message: 'Not allowed',
     }));
   });
 
@@ -557,7 +557,7 @@ describe('auth middleware', () => {
 
     const req = httpMocks.createRequest({
       headers: { Authorization: `Bearer ${userOneAccessToken}` },
-      params: { userId: userOne._id.toHexString() }
+      params: { userId: userOne._id.toHexString() },
     });
     const next = jest.fn();
 
@@ -572,7 +572,7 @@ describe('auth middleware', () => {
 
     const req = httpMocks.createRequest({
       headers: { Authorization: `Bearer ${adminAccessToken}` },
-      params: { userId: userOne._id.toHexString() }
+      params: { userId: userOne._id.toHexString() },
     });
     const next = jest.fn();
 

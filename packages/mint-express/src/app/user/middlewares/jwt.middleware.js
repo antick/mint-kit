@@ -5,7 +5,7 @@ const Token = require('../models/token.model');
 
 const jwtOptions = {
   secretOrKey: config.jwt.secret,
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
 };
 
 const jwtVerify = async (payload, done) => {
@@ -22,5 +22,5 @@ const jwtVerify = async (payload, done) => {
 const jwtStrategy = new JwtStrategy(jwtOptions, jwtVerify);
 
 module.exports = {
-  jwtStrategy
+  jwtStrategy,
 };

@@ -22,9 +22,9 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
+        left: true,
+      },
+    },
   },
   {
     component: PostList,
@@ -36,9 +36,9 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
+        left: true,
+      },
+    },
   },
   {
     component: Task,
@@ -50,9 +50,9 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
+        left: true,
+      },
+    },
   },
   {
     component: Campaign,
@@ -64,9 +64,9 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
+        left: true,
+      },
+    },
   },
   {
     component: Settings,
@@ -78,12 +78,12 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
+        left: true,
+      },
+    },
   },
   {
     component: Profile,
-    path: '/profile'
-  }
+    path: '/profile',
+  },
 ];

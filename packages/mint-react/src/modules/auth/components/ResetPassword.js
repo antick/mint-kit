@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import {
-  Formik, Form, Field, ErrorMessage
+  Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ import useAlert from '../../shared/hooks/useAlert';
 
 const initialValues = {
   password: '',
-  confirmPassword: ''
+  confirmPassword: '',
 };
 
 const validationSchema = Yup.object().shape({
@@ -26,16 +26,16 @@ const validationSchema = Yup.object().shape({
   confirmPassword: Yup
     .string()
     .required('Confirmation password is required')
-    .oneOf([Yup.ref('password'), null], 'Passwords should match')
+    .oneOf([Yup.ref('password'), null], 'Passwords should match'),
 });
 
 const ResetPassword = ({ history }) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const alert = useAlert();
-  const passwordSelector = useSelector(state => state.passwordReducer);
+  const passwordSelector = useSelector((state) => state.passwordReducer);
 
-  const handleChangePassword = values => {
+  const handleChangePassword = (values) => {
     const { password, confirmPassword } = values;
 
     if (password && confirmPassword && !passwordSelector.submitting) {
@@ -53,9 +53,9 @@ const ResetPassword = ({ history }) => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={values => handleChangePassword(values)}
+      onSubmit={(values) => handleChangePassword(values)}
     >
-      {formik => {
+      {(formik) => {
         const { errors, touched } = formik;
 
         return (
@@ -103,7 +103,7 @@ const ResetPassword = ({ history }) => {
 };
 
 ResetPassword.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default ResetPassword;

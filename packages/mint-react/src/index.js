@@ -23,7 +23,7 @@ ReactDOM.render(
   <Provider store={configuredStore}>
     <App history={history} />
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 serviceWorker.unregister();

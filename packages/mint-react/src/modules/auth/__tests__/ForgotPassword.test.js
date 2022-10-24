@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {
-  render, waitFor, screen, fireEvent
+  render, waitFor, screen, fireEvent,
 } from '@testing-library/react';
 import * as redux from 'react-redux';
 import userEvent from '@testing-library/user-event';
@@ -21,7 +21,7 @@ describe('the ForgotPassword component', () => {
         <Router>
           <ForgotPassword history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByTestId('btn-submit')).toBeDisabled();
@@ -35,7 +35,7 @@ describe('the ForgotPassword component', () => {
         <Router>
           <ForgotPassword history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     const form = screen.getByTestId('forgot-password-form');
@@ -50,8 +50,8 @@ describe('the ForgotPassword component', () => {
       expect(axios.post).toHaveBeenCalledWith(
         'auth/forgot-password',
         {
-          email: 'pankaj@desk.sh'
-        }
+          email: 'pankaj@desk.sh',
+        },
       );
     });
   });
@@ -64,7 +64,7 @@ describe('the ForgotPassword component', () => {
         <Router>
           <ForgotPassword history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     const form = screen.getByTestId('forgot-password-form');

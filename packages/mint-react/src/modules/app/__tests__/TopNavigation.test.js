@@ -12,7 +12,7 @@ describe('the TopNavigation component', () => {
   beforeEach(() => {
     Object.defineProperty(window, 'location', {
       writable: true,
-      value: { assign: jest.fn() }
+      value: { assign: jest.fn() },
     });
   });
 
@@ -22,7 +22,7 @@ describe('the TopNavigation component', () => {
         <Router>
           <TopNavigation />
         </Router>
-      </Provider>
+      </Provider>,
     );
     const button = wrapper.find('#logout-button');
 

@@ -1,7 +1,7 @@
 import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
-  LOGOUT
+  LOGOUT,
 } from '../../user/actions/types/userType';
 import auth from '../utilities/authUtility';
 
@@ -13,7 +13,7 @@ export default function authentication(state = initialState, action) {
     case LOGIN_SUCCESS:
       return {
         loggedIn: true,
-        user: action.payload
+        user: action.payload,
       };
 
     case LOGIN_FAILURE:
@@ -21,7 +21,7 @@ export default function authentication(state = initialState, action) {
 
     case LOGOUT:
       return {
-        loggedIn: false
+        loggedIn: false,
       };
 
     default:

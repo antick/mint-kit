@@ -13,7 +13,7 @@ const authenticate = async (email, password) => {
   return user;
 };
 
-const refreshAuth = async refreshToken => {
+const refreshAuth = async (refreshToken) => {
   try {
     const refreshTokenDoc = await tokenService.verifyToken(refreshToken, 'refresh');
     const user = await userService.getUserById(refreshTokenDoc.user);
@@ -49,5 +49,5 @@ const resetPassword = async (resetPasswordToken, newPassword) => {
 module.exports = {
   resetPassword,
   authenticate,
-  refreshAuth
+  refreshAuth,
 };

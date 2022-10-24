@@ -29,7 +29,7 @@
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "docker": "docker-compose -f docker-compose.yml up",
-    "lint": "eslint ./src/ --ignore-path .gitignore",
+    "lint": "eslint ./packages/ --ignore-path .gitignore",
     "lint:fix": "pnpm run lint --fix",
     "lint:watch": "pnpm run lint --watch",
     "clean:express": "pnpm --filter mint-express install:clean",

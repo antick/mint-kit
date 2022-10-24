@@ -11,7 +11,7 @@ const CheckBox = ({ label }) => (
 );
 
 CheckBox.propTypes = {
-  label: PropTypes.string
+  label: PropTypes.string,
 };
 
 export default CheckBox;

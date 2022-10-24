@@ -12,11 +12,11 @@ const adminAccessToken = tokenService.generateToken(admin._id, accessTokenExpire
 const userOneRefreshToken = tokenService.generateToken(userOne._id, refreshTokenExpires);
 const adminRefreshToken = tokenService.generateToken(admin._id, refreshTokenExpires);
 
-const saveTokens = async refreshToken => {
+const saveTokens = async (refreshToken) => {
   await tokenService.saveToken(refreshToken, userOne._id, refreshTokenExpires, 'refresh');
 };
 
-const saveAdminToken = async refreshToken => {
+const saveAdminToken = async (refreshToken) => {
   await tokenService.saveToken(refreshToken, admin._id, refreshTokenExpires, 'refresh');
 };
 
@@ -27,5 +27,5 @@ module.exports = {
   adminRefreshToken,
   adminAccessToken,
   saveAdminToken,
-  saveTokens
+  saveTokens,
 };

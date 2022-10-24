@@ -1,5 +1,5 @@
 module.exports = {
   environment: {
-    production: false
-  }
+    production: false,
+  },
 };

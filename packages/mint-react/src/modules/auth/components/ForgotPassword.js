@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Formik, Form, Field, ErrorMessage
+  Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
@@ -12,21 +12,21 @@ import SubmitButton from '../../shared/components/Form/SubmitButton';
 import useAlert from '../../shared/hooks/useAlert';
 
 const initialValues = {
-  email: ''
+  email: '',
 };
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Enter a valid email')
-    .required('Email is required')
+    .required('Email is required'),
 });
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
-  const password = useSelector(state => state.passwordReducer);
+  const password = useSelector((state) => state.passwordReducer);
 
-  const handlePasswordRequestSubmission = inputs => {
+  const handlePasswordRequestSubmission = (inputs) => {
     const { email } = inputs;
 
     if (email && !password.submitting) {
@@ -38,9 +38,9 @@ const ForgotPassword = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={inputs => handlePasswordRequestSubmission(inputs)}
+      onSubmit={(inputs) => handlePasswordRequestSubmission(inputs)}
     >
-      {formik => {
+      {(formik) => {
         const { errors, touched } = formik;
 
         return (
@@ -95,7 +95,7 @@ const ForgotPassword = () => {
 };
 
 ForgotPassword.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default ForgotPassword;

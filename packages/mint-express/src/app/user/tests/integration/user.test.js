@@ -4,14 +4,16 @@ const httpStatus = require('http-status');
 const app = require('../../../../main');
 const setupTestDB = require('../../../../tests/setupTestDb');
 const User = require('../../models/user.model');
-const { userOne, userTwo, admin, insertUsers } = require('../fixtures/user.fixture');
+const {
+  userOne, userTwo, admin, insertUsers,
+} = require('../fixtures/user.fixture');
 const {
   userOneAccessToken,
   userOneRefreshToken,
   adminAccessToken,
   adminRefreshToken,
   saveTokens,
-  saveAdminToken
+  saveAdminToken,
 } = require('../fixtures/token.fixture');
 
 setupTestDB();
@@ -25,7 +27,7 @@ describe('user routes', () => {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
         password: 'password1',
-        role: 'user'
+        role: 'user',
       };
     });
 
@@ -41,7 +43,7 @@ describe('user routes', () => {
 
       expect(res.body).not.toHaveProperty('password');
       expect(res.body).toStrictEqual({
-        id: expect.anything(), name: newUser.name, email: newUser.email, role: newUser.role
+        id: expect.anything(), name: newUser.name, email: newUser.email, role: newUser.role,
       });
 
       const dbUser = await User.findById(res.body.id);
@@ -178,14 +180,14 @@ describe('user routes', () => {
         page: 1,
         limit: 10,
         totalPages: 1,
-        totalResults: 3
+        totalResults: 3,
       });
       expect(res.body.results).toHaveLength(3);
       expect(res.body.results[0]).toStrictEqual({
         id: userOne._id.toHexString(),
         name: userOne.name,
         email: userOne.email,
-        role: userOne.role
+        role: userOne.role,
       });
     });
 
@@ -225,7 +227,7 @@ describe('user routes', () => {
         page: 1,
         limit: 10,
         totalPages: 1,
-        totalResults: 1
+        totalResults: 1,
       });
       expect(res.body.results).toHaveLength(1);
       expect(res.body.results[0].id).toBe(userOne._id.toHexString());
@@ -247,7 +249,7 @@ describe('user routes', () => {
         page: 1,
         limit: 10,
         totalPages: 1,
-        totalResults: 2
+        totalResults: 2,
       });
       expect(res.body.results).toHaveLength(2);
       expect(res.body.results[0].id).toBe(userOne._id.toHexString());
@@ -270,7 +272,7 @@ describe('user routes', () => {
         page: 1,
         limit: 10,
         totalPages: 1,
-        totalResults: 3
+        totalResults: 3,
       });
       expect(res.body.results).toHaveLength(3);
       expect(res.body.results[0].id).toBe(userOne._id.toHexString());
@@ -294,7 +296,7 @@ describe('user routes', () => {
         page: 1,
         limit: 10,
         totalPages: 1,
-        totalResults: 3
+        totalResults: 3,
       });
       expect(res.body.results).toHaveLength(3);
       expect(res.body.results[0].id).toBe(admin._id.toHexString());
@@ -318,7 +320,7 @@ describe('user routes', () => {
         page: 1,
         limit: 2,
         totalPages: 2,
-        totalResults: 3
+        totalResults: 3,
       });
       expect(res.body.results).toHaveLength(2);
       expect(res.body.results[0].id).toBe(userOne._id.toHexString());
@@ -341,7 +343,7 @@ describe('user routes', () => {
         page: 2,
         limit: 2,
         totalPages: 2,
-        totalResults: 3
+        totalResults: 3,
       });
       expect(res.body.results).toHaveLength(1);
       expect(res.body.results[0].id).toBe(admin._id.toHexString());
@@ -363,7 +365,7 @@ describe('user routes', () => {
         email: admin.email,
         id: admin._id.toString(),
         name: admin.name,
-        role: admin.role
+        role: admin.role,
       });
     });
 
@@ -386,7 +388,7 @@ describe('user routes', () => {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
         password: 'newPassword1',
-        avatar: null
+        avatar: null,
       };
 
       const res = await request(app)
@@ -400,7 +402,7 @@ describe('user routes', () => {
         name: updateBody.name,
         email: updateBody.email,
         avatar: updateBody.avatar,
-        role: 'admin'
+        role: 'admin',
       });
     });
   });
@@ -430,7 +432,7 @@ describe('user routes', () => {
 
       expect(res.body).toStrictEqual({
         status: 401,
-        message: 'Authentication required!'
+        message: 'Authentication required!',
       });
     });
 
@@ -445,7 +447,7 @@ describe('user routes', () => {
 
       expect(res.body).toStrictEqual({
         status: 401,
-        message: 'Authentication required!'
+        message: 'Authentication required!',
       });
     });
 
@@ -461,7 +463,7 @@ describe('user routes', () => {
 
       expect(res.body).toStrictEqual({
         status: 404,
-        message: 'Token not found'
+        message: 'Token not found',
       });
     });
   });
@@ -482,7 +484,7 @@ describe('user routes', () => {
         id: userOne._id.toHexString(),
         email: userOne.email,
         name: userOne.name,
-        role: userOne.role
+        role: userOne.role,
       });
     });
 
@@ -615,7 +617,7 @@ describe('user routes', () => {
       const updateBody = {
         name: faker.name.findName(),
         email: faker.internet.email().toLowerCase(),
-        password: 'newPassword1'
+        password: 'newPassword1',
       };
 
       const res = await request(app)
@@ -629,7 +631,7 @@ describe('user routes', () => {
         id: userOne._id.toHexString(),
         name: updateBody.name,
         email: updateBody.email,
-        role: 'user'
+        role: 'user',
       });
 
       const dbUser = await User.findById(userOne._id);

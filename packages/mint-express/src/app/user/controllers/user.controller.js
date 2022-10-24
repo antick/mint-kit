@@ -79,5 +79,5 @@ userController
   }));
 
 module.exports = {
-  userController
+  userController,
 };

@@ -86,7 +86,7 @@ describe('misc', () => {
         blackout: ['.foo'],
         capture: 'viewport',
         clip: {
-          x: 0, y: 0, width: 200, height: 200
+          x: 0, y: 0, width: 200, height: 200,
         },
         scale: false,
         disableTimersAndAnimations: true,
@@ -94,7 +94,7 @@ describe('misc', () => {
         onBeforeScreenshot() {
         },
         onAfterScreenshot() {
-        }
+        },
       });
     });
   });

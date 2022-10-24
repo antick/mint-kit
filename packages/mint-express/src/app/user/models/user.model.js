@@ -11,7 +11,7 @@ const userSchema = new Schema(
     name: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     email: {
       type: String,
@@ -23,7 +23,7 @@ const userSchema = new Schema(
         if (!validator.isEmail(value)) {
           throw new Error('Invalid email');
         }
-      }
+      },
     },
     password: {
       type: String,
@@ -35,22 +35,22 @@ const userSchema = new Schema(
           throw new Error('Password must contain at least one letter and one number');
         }
       },
-      private: true // used by the toJSON plugin
+      private: true, // used by the toJSON plugin
     },
     avatar: {
       type: String,
       required: false,
-      trim: true
+      trim: true,
     },
     role: {
       type: String,
       enum: roles,
-      default: 'user'
-    }
+      default: 'user',
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
 userSchema.plugin(paginate);
@@ -76,5 +76,5 @@ userSchema.pre('save', async function (next) {
 const User = model('User', userSchema);
 
 module.exports = {
-  User
+  User,
 };

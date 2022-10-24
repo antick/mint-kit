@@ -14,7 +14,7 @@ describe('the App component', () => {
     const wrapper = mount(
       <Provider store={configuredStore}>
         <App history={history} />
-      </Provider>
+      </Provider>,
     );
 
     expect(wrapper.find(Route)).toHaveLength(1);
@@ -28,7 +28,7 @@ describe('the LeftNavigation component', () => {
         <Router>
           <LeftNavigation />
         </Router>
-      </Provider>
+      </Provider>,
     );
   });
 });

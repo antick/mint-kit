@@ -12,7 +12,7 @@ const userOne = {
   name: faker.name.findName(),
   email: faker.internet.email().toLowerCase(),
   password,
-  role: 'user'
+  role: 'user',
 };
 
 const userTwo = {
@@ -20,7 +20,7 @@ const userTwo = {
   name: faker.name.findName(),
   email: faker.internet.email().toLowerCase(),
   password,
-  role: 'user'
+  role: 'user',
 };
 
 const admin = {
@@ -28,16 +28,16 @@ const admin = {
   name: faker.name.findName(),
   email: faker.internet.email().toLowerCase(),
   password,
-  role: 'admin'
+  role: 'admin',
 };
 
-const insertUsers = async users => {
-  await User.insertMany(users.map(user => ({ ...user, password: hashedPassword })));
+const insertUsers = async (users) => {
+  await User.insertMany(users.map((user) => ({ ...user, password: hashedPassword })));
 };
 
 module.exports = {
   insertUsers,
   userOne,
   userTwo,
-  admin
+  admin,
 };

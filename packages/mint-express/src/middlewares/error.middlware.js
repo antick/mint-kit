@@ -10,11 +10,11 @@ const errorHandler = (error, req, res, next) => {
     .json({
       stack: error.stack,
       status: error.statusCode,
-      message: error.message
+      message: error.message,
     });
 };
 
 module.exports = {
   notFoundErrorHandler,
-  errorHandler
+  errorHandler,
 };

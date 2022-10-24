@@ -1,13 +1,13 @@
 import {
   GET_POSTS,
   GET_POSTS_SUCCESS,
-  GET_POSTS_FAILURE
+  GET_POSTS_FAILURE,
 } from '../actions/types/postType';
 
 export const initialState = {
   posts: [],
   loading: false,
-  hasErrors: false
+  hasErrors: false,
 };
 
 export default function postsReducer(state = initialState, action) {
@@ -15,21 +15,21 @@ export default function postsReducer(state = initialState, action) {
     case GET_POSTS:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
 
     case GET_POSTS_SUCCESS:
       return {
         posts: action.payload,
         loading: false,
-        hasErrors: false
+        hasErrors: false,
       };
 
     case GET_POSTS_FAILURE:
       return {
         ...state,
         loading: false,
-        hasErrors: true
+        hasErrors: true,
       };
 
     default:

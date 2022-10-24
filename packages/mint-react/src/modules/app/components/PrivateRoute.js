@@ -10,7 +10,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   useSilentToken();
 
   return (
-    <Route {...rest} render={props => (
+    <Route {...rest} render={(props) => (
       isAuthenticated === true
         ? <Component auth={isAuthenticated} {...props} {...rest} />
         : <Redirect to='/login' />
@@ -21,7 +21,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 PrivateRoute.propTypes = {
   component: PropTypes.any.isRequired,
   history: PropTypes.object,
-  auth: PropTypes.bool
+  auth: PropTypes.bool,
 };
 
 export default PrivateRoute;

@@ -22,7 +22,7 @@ const Container = ({ history }) => (
         </header>
 
         <Switch>
-          {routes.filter(route => !get(route, 'public', false))
+          {routes.filter((route) => !get(route, 'public', false))
             .map((prop, key) => (
               <Route
                 exact={!!prop.exact}
@@ -38,7 +38,7 @@ const Container = ({ history }) => (
 );
 
 Container.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default Container;

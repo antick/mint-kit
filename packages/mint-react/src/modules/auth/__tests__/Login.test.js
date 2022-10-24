@@ -16,7 +16,7 @@ describe('the Login component', () => {
       <Router>
         <Login />
       </Router>
-    </Provider>
+    </Provider>,
   );
 
   it('should have a disabled login button if email/password is not entered', async () => {
@@ -25,7 +25,7 @@ describe('the Login component', () => {
         <Router>
           <Login history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByTestId('btn-submit')).toBeDisabled();
@@ -49,7 +49,7 @@ describe('the Login component', () => {
   it('should show an error for wrong email and correct password after clicking on login button', async () => {
     jest.spyOn(redux, 'useSelector').mockImplementation(() => ({
       message: 'Incorrect email or password',
-      type: 'alert-danger'
+      type: 'alert-danger',
     }));
 
     render(
@@ -57,7 +57,7 @@ describe('the Login component', () => {
         <Router>
           <Login history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     const emailInput = screen.getByTestId('email');
@@ -80,7 +80,7 @@ describe('the Login component', () => {
 
     jest.spyOn(redux, 'useSelector').mockImplementation(() => ({
       message: '',
-      type: ''
+      type: '',
     }));
 
     render(
@@ -88,7 +88,7 @@ describe('the Login component', () => {
         <Router>
           <Login history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     const emailInput = screen.getByTestId('email');

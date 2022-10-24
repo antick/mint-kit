@@ -1,11 +1,11 @@
 import {
   SUBMITTING,
   FORGOT_PASSWORD_REQUEST,
-  RESET_PASSWORD_FAILURE
+  RESET_PASSWORD_FAILURE,
 } from '../../user/actions/types/userType';
 
 const initialState = {
-  submitting: false
+  submitting: false,
 };
 
 export default function password(state = initialState, action) {
@@ -13,19 +13,19 @@ export default function password(state = initialState, action) {
     case SUBMITTING:
       return {
         ...state,
-        submitting: true
+        submitting: true,
       };
 
     case FORGOT_PASSWORD_REQUEST:
       return {
         ...state,
-        submitting: false
+        submitting: false,
       };
 
     case RESET_PASSWORD_FAILURE:
       return {
         ...state,
-        submitting: false
+        submitting: false,
       };
 
     default:

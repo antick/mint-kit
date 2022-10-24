@@ -4,9 +4,9 @@
  * @param callback
  * @returns {function(...[*]=)}
  */
-const controller = callback => (req, res, next) => {
+const controller = (callback) => (req, res, next) => {
   Promise.resolve(callback(req, res, next))
-    .catch(err => next(err));
+    .catch((err) => next(err));
 };
 
 /**
@@ -26,5 +26,5 @@ const pick = (object, keys) => keys.reduce((obj, key) => {
 
 module.exports = {
   controller,
-  pick
+  pick,
 };

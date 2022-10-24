@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  Formik, Form, Field, ErrorMessage
+  Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import Motion from '../../shared/components/Motion';
@@ -13,7 +13,7 @@ import useAlert from '../../shared/hooks/useAlert';
 const initialValues = {
   name: '',
   email: '',
-  password: ''
+  password: '',
 };
 
 const validationSchema = Yup.object().shape({
@@ -27,7 +27,7 @@ const validationSchema = Yup.object().shape({
 
   password: Yup.string()
     .required('Password is required')
-    .min(6, 'Password is too short - should be at least 6 characters long.')
+    .min(6, 'Password is too short - should be at least 6 characters long.'),
 });
 
 const Register = ({ history }) => {
@@ -46,11 +46,11 @@ const Register = ({ history }) => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={inputs => handleSignUp(inputs)}
+      onSubmit={(inputs) => handleSignUp(inputs)}
     >
-      {formik => {
+      {(formik) => {
         const {
-          errors, touched, isValid, dirty
+          errors, touched, isValid, dirty,
         } = formik;
 
         return (
@@ -113,7 +113,7 @@ const Register = ({ history }) => {
 };
 
 Register.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default Register;

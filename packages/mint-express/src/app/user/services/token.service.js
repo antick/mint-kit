@@ -9,7 +9,7 @@ const generateToken = (userId, expires, secret = config.jwt.secret) => {
   const payload = {
     sub: userId,
     iat: moment().unix(),
-    exp: expires.unix()
+    exp: expires.unix(),
   };
 
   return jwt.sign(payload, secret);
@@ -20,14 +20,14 @@ const saveToken = async (token, userId, expires, type, blacklisted = false) => T
   user: userId,
   expires: expires.toDate(),
   type,
-  blacklisted
+  blacklisted,
 });
 
 const verifyToken = async (token, type) => {
   const payload = jwt.verify(token, config.jwt.secret);
 
   const tokenDoc = await Token.findOne({
-    token, type, user: payload.sub, blacklisted: false
+    token, type, user: payload.sub, blacklisted: false,
   });
 
   if (!tokenDoc) {
@@ -37,7 +37,7 @@ const verifyToken = async (token, type) => {
   return tokenDoc;
 };
 
-const generateAuthTokens = async user => {
+const generateAuthTokens = async (user) => {
   const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'minutes');
   const accessToken = generateToken(user.id, accessTokenExpires);
 
@@ -50,16 +50,16 @@ const generateAuthTokens = async user => {
     access: {
       token: accessToken,
       expires: accessTokenExpires.toDate(),
-      expiresIn: config.jwt.accessExpirationMinutes
+      expiresIn: config.jwt.accessExpirationMinutes,
     },
     refresh: {
       token: refreshToken,
-      expires: refreshTokenExpires.toDate()
-    }
+      expires: refreshTokenExpires.toDate(),
+    },
   };
 };
 
-const generateResetPasswordToken = async email => {
+const generateResetPasswordToken = async (email) => {
   const user = await userService.getUserByEmail(email);
 
   if (!user) {
@@ -74,7 +74,7 @@ const generateResetPasswordToken = async email => {
   return resetPasswordToken;
 };
 
-const deleteRefreshToken = async refreshToken => {
+const deleteRefreshToken = async (refreshToken) => {
   const token = await verifyToken(refreshToken, 'refresh');
 
   await token.remove();
@@ -88,5 +88,5 @@ module.exports = {
   deleteRefreshToken,
   generateToken,
   verifyToken,
-  saveToken
+  saveToken,
 };

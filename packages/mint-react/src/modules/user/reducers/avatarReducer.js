@@ -1,7 +1,7 @@
 import { SET_AVATAR, CLEAR_AVATAR } from '../actions/types/avatarType';
 
 const initialState = {
-  avatar: false
+  avatar: false,
 };
 
 export default function avatarReducer(state = initialState, action) {
@@ -9,13 +9,13 @@ export default function avatarReducer(state = initialState, action) {
     case SET_AVATAR:
       return {
         ...state,
-        avatar: action.payload
+        avatar: action.payload,
       };
 
     case CLEAR_AVATAR:
       return {
         ...state,
-        avatar: false
+        avatar: false,
       };
 
     default:

@@ -14,7 +14,7 @@ describe('the UserList component', () => {
         <Router>
           <UserList history={history} />
         </Router>
-      </Provider>
+      </Provider>,
     );
   });
 });

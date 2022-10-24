@@ -15,7 +15,7 @@ describe('the Register component', () => {
         <Router>
           <Register />
         </Router>
-      </Provider>
+      </Provider>,
     );
     const button = wrapper.find('.btn-submit');
 

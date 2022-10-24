@@ -3,7 +3,7 @@ const path = require('path');
 const joi = require('joi');
 
 env.config({
-  path: path.join(__dirname, '../../.env')
+  path: path.join(__dirname, '../../.env'),
 });
 
 const configSet = joi.object()
@@ -20,7 +20,7 @@ const configSet = joi.object()
     SMTP_PORT: joi.number(),
     SMTP_USERNAME: joi.string().allow(null, ''),
     SMTP_PASSWORD: joi.string().allow(null, ''),
-    EMAIL_FROM: joi.string().allow(null, '')
+    EMAIL_FROM: joi.string().allow(null, ''),
   })
   .unknown();
 
@@ -37,13 +37,13 @@ module.exports = {
   webUrl: configValue.WEB_URL,
   port: configValue.PORT,
   mongoose: {
-    url: configValue.MONGODB_URL + (configValue.NODE_ENV === 'test' ? '_test' : '')
+    url: configValue.MONGODB_URL + (configValue.NODE_ENV === 'test' ? '_test' : ''),
   },
   jwt: {
     secret: configValue.JWT_SECRET,
     accessExpirationMinutes: configValue.JWT_ACCESS_TOKEN_EXPIRY_MINUTES,
     refreshExpirationDays: configValue.JWT_REFRESH_TOKEN_EXPIRY_DAYS,
-    resetPasswordExpirationMinutes: configValue.RESET_PASSWORD_TOKEN_EXPIRY_MINUTES
+    resetPasswordExpirationMinutes: configValue.RESET_PASSWORD_TOKEN_EXPIRY_MINUTES,
   },
   email: {
     smtp: {
@@ -51,9 +51,9 @@ module.exports = {
       port: configValue.SMTP_PORT,
       auth: {
         user: configValue.SMTP_USERNAME,
-        pass: configValue.SMTP_PASSWORD
-      }
+        pass: configValue.SMTP_PASSWORD,
+      },
     },
-    from: configValue.EMAIL_FROM
-  }
+    from: configValue.EMAIL_FROM,
+  },
 };

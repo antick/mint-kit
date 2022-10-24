@@ -8,7 +8,7 @@ import userReducer from '../modules/user/reducers/userReducer';
 import avatarReducer from '../modules/user/reducers/avatarReducer';
 import alertReducer from '../modules/shared/reducers/alertReducer';
 
-const rootReducer = history => combineReducers({
+const rootReducer = (history) => combineReducers({
   router: connectRouter(history),
   authenticationReducer,
   registrationReducer,
@@ -16,7 +16,7 @@ const rootReducer = history => combineReducers({
   avatarReducer,
   alertReducer,
   postReducer,
-  userReducer
+  userReducer,
 });
 
 export default rootReducer;

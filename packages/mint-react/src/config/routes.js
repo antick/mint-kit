@@ -10,7 +10,7 @@ const routes = [
   ...authRoutes,
   ...appRoutes,
   ...userRoutes,
-  { component: NotFound }
+  { component: NotFound },
 ];
 
 export default routes;

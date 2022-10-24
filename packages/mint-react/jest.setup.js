@@ -7,10 +7,10 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 configure({ adapter: new Adapter() });
 
-const MockResponsiveContainer = props => <div {...props} />;
+const MockResponsiveContainer = (props) => <div {...props} />;
 
 // Mocking and fixing the recharts warning in test suits
 jest.mock('recharts', () => ({
   ...jest.requireActual('recharts'),
-  ResponsiveContainer: MockResponsiveContainer
+  ResponsiveContainer: MockResponsiveContainer,
 }));

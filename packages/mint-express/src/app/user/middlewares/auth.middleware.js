@@ -12,7 +12,7 @@ const authorization = (req, resolve, reject, requiredPermissions) => async (err,
 
   if (requiredPermissions.length) {
     const userPermissions = rolePermissions.get(user.role);
-    const hasPermission = requiredPermissions.every(requiredRight => userPermissions.includes(requiredRight));
+    const hasPermission = requiredPermissions.every((requiredRight) => userPermissions.includes(requiredRight));
 
     if (!hasPermission && req.params.userId !== user.id) {
       return reject(new ForbiddenError());
@@ -26,12 +26,12 @@ const authMiddleware = (...requiredPermissions) => async (req, res, next) => new
   passport.authenticate(
     'jwt',
     { session: false },
-    authorization(req, resolve, reject, requiredPermissions)
+    authorization(req, resolve, reject, requiredPermissions),
   )(req, res, next);
 })
   .then(() => next())
-  .catch(err => next(err));
+  .catch((err) => next(err));
 
 module.exports = {
-  authMiddleware
+  authMiddleware,
 };

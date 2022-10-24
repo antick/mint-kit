@@ -145,7 +145,7 @@ const TopNavigation = ({ history }) => {
 };
 
 TopNavigation.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default TopNavigation;

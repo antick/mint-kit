@@ -6,13 +6,13 @@ module.exports = {
       statements: 97.97,
       branches: 93.33,
       functions: 96.05,
-      lines: 97.91
-    }
+      lines: 97.91,
+    },
   },
   restoreMocks: true,
   testEnvironment: 'node',
   testEnvironmentOptions: {
-    NODE_ENV: 'test'
+    NODE_ENV: 'test',
   },
-  testRegex: '((\\.|/*.)(test))\\.js?$'
+  testRegex: '((\\.|/*.)(test))\\.js?$',
 };

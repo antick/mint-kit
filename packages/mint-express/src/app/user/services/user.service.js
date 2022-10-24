@@ -13,7 +13,7 @@ const isEmailTaken = async function (email, excludeUserId = null) {
   return !!user;
 };
 
-const createUser = async userBody => {
+const createUser = async (userBody) => {
   if (await isEmailTaken(userBody.email)) {
     throw new BadRequestError('Email already taken');
   }
@@ -47,9 +47,9 @@ const updateProfile = async (userId, userBody) => {
 
 const queryUsers = async (filter, options) => User.paginate(filter, options);
 
-const getUserById = async id => User.findById(id);
+const getUserById = async (id) => User.findById(id);
 
-const getUserByEmail = async email => User.findOne({ email });
+const getUserByEmail = async (email) => User.findOne({ email });
 
 const updateUserById = async (userId, updateBody) => {
   const user = await getUserById(userId);
@@ -69,7 +69,7 @@ const updateUserById = async (userId, updateBody) => {
   return user;
 };
 
-const deleteUserById = async userId => {
+const deleteUserById = async (userId) => {
   const user = await getUserById(userId);
 
   if (!user) {
@@ -88,5 +88,5 @@ module.exports = {
   updateProfile,
   getUserById,
   createUser,
-  queryUsers
+  queryUsers,
 };

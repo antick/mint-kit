@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Motion from '../../../shared/components/Motion';
 import routes from '../../../../config/routes';
 
-const onlyPrivateLeftMenu = route => get(route, 'menu.visible.left', false) && !get(route, 'public', false);
+const onlyPrivateLeftMenu = (route) => get(route, 'menu.visible.left', false) && !get(route, 'public', false);
 
 const LeftNavigation = () => {
   const location = useLocation();

@@ -6,6 +6,6 @@ module.exports = {
   plugins: [
     postCssImport,
     tailwindcss,
-    autoprefixer
-  ]
+    autoprefixer,
+  ],
 };

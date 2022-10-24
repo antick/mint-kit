@@ -11,7 +11,7 @@ const PostList = () => {
     dispatch(postsAction.fetchPosts());
   }, [dispatch]);
 
-  const { loading, hasErrors, posts } = useSelector(state => state.postReducer);
+  const { loading, hasErrors, posts } = useSelector((state) => state.postReducer);
 
   const renderPosts = () => {
     if (loading) {
@@ -33,10 +33,10 @@ const PostList = () => {
       'red',
       'green',
       'blue',
-      'purple'
+      'purple',
     ];
 
-    return posts.map(post => {
+    return posts.map((post) => {
       const pickRandomColor = colors[Math.floor(Math.random() * colors.length)];
 
       return (

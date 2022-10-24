@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
-  Formik, Form, Field, ErrorMessage
+  Formik, Form, Field, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
@@ -13,7 +13,7 @@ import useAlert from '../../shared/hooks/useAlert';
 
 const initialValues = {
   email: '',
-  password: ''
+  password: '',
 };
 
 const validationSchema = Yup.object().shape({
@@ -23,7 +23,7 @@ const validationSchema = Yup.object().shape({
 
   password: Yup.string()
     .required('Password is required')
-    .min(6, 'Password is too short - should be at least 6 characters long.')
+    .min(6, 'Password is too short - should be at least 6 characters long.'),
 });
 
 const Login = ({ history }) => {
@@ -31,13 +31,13 @@ const Login = ({ history }) => {
   const location = useLocation();
   const alert = useAlert();
 
-  const handleLogin = inputs => {
+  const handleLogin = (inputs) => {
     const { email, password } = inputs;
 
     if (email && password) {
       const { from } = location.state || { from: { pathname: '/' } };
       const actionData = {
-        history, email, password, from
+        history, email, password, from,
       };
 
       dispatch(alertAction.clear());
@@ -49,11 +49,11 @@ const Login = ({ history }) => {
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={inputs => handleLogin(inputs)}
+      onSubmit={(inputs) => handleLogin(inputs)}
     >
-      {formik => {
+      {(formik) => {
         const {
-          errors, touched, isValid, dirty
+          errors, touched, isValid, dirty,
         } = formik;
 
         return (
@@ -115,7 +115,7 @@ const Login = ({ history }) => {
 };
 
 Login.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default Login;

@@ -20,14 +20,6 @@
   },
 
   "rules": {
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
     "consistent-return": "off",
     "func-names": "off",
     "function-paren-newline": [
@@ -50,7 +42,7 @@
     "max-len": [
       "error",
       {
-        "code": 130
+        "code": 120
       }
     ],
     "no-confusing-arrow": 0,
@@ -105,14 +97,6 @@
       ],
 
       "rules": {
-        "arrow-parens": [
-          "error",
-          "as-needed"
-        ],
-        "comma-dangle": [
-          "error",
-          "never"
-        ],
         "consistent-return": "off",
         "func-names": "off",
         "function-paren-newline": [
@@ -135,7 +119,7 @@
         "max-len": [
           "error",
           {
-            "code": 130
+            "code": 120
           }
         ],
         "no-confusing-arrow": 0,

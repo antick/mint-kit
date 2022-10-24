@@ -1,9 +1,9 @@
 import React, {
-  useEffect, useRef, useState
+  useEffect, useRef, useState,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  ErrorMessage, Field, Form, Formik
+  ErrorMessage, Field, Form, Formik,
 } from 'formik';
 import ImageUploader from 'react-images-upload';
 import * as Yup from 'yup';
@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
     .required('Email is required'),
 
   password: Yup.string()
-    .min(6, 'Password is too short - should be at least 6 characters long.')
+    .min(6, 'Password is too short - should be at least 6 characters long.'),
 });
 
 const Profile = () => {
@@ -34,13 +34,13 @@ const Profile = () => {
   const initialValues = useRef({
     name: '',
     email: '',
-    password: ''
+    password: '',
   });
 
   const dispatch = useDispatch();
   const alert = useAlert();
-  const userSelector = useSelector(state => state.userReducer);
-  const avatarSelector = useSelector(state => state.avatarReducer);
+  const userSelector = useSelector((state) => state.userReducer);
+  const avatarSelector = useSelector((state) => state.avatarReducer);
 
   const [avatarFile, setAvatarFile] = useState(false);
 
@@ -52,7 +52,7 @@ const Profile = () => {
     if (userSelector.profile) {
       initialValues.current = {
         ...userSelector.profile,
-        password: ''
+        password: '',
       };
     }
   }, [userSelector.profile]);
@@ -66,14 +66,14 @@ const Profile = () => {
     setAvatarFile(picture[0]);
   };
 
-  const saveProfile = input => {
+  const saveProfile = (input) => {
     const formData = new FormData();
 
     if (avatarSelector.avatar && avatarFile) {
       formData.append(
         'avatar',
         avatarFile,
-        avatarFile.name
+        avatarFile.name,
       );
     } else if (avatarSelector.avatar && !avatarFile) {
       formData.append('avatar', last(avatarSelector.avatar.split('http://localhost:3002/uploads/')));
@@ -101,15 +101,15 @@ const Profile = () => {
             initialValues={initialValues.current}
             validationSchema={validationSchema}
             enableReinitialize={true}
-            onSubmit={inputs => saveProfile(inputs)}
+            onSubmit={(inputs) => saveProfile(inputs)}
           >
-            {formik => {
+            {(formik) => {
               const { errors, touched } = formik;
 
               return (
                 <Form className="flex flex-wrap -mx-4 overflow-hidden sm:-mx-4 md:-mx-4 lg:-mx-3 xl:-mx-4">
-                  <div className="my-4 px-4 w-1/2 overflow-hidden sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/2 lg:my-3
-                  lg:px-3 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
+                  <div className="my-4 px-4 w-1/2 overflow-hidden sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/2
+                  lg:my-3 lg:px-3 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                     <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                       <div className="mt-2 flex justify-center items-center">
                         {avatarSelector.avatar
@@ -141,8 +141,8 @@ const Profile = () => {
                     </div>
                   </div>
 
-                  <div className="my-4 px-4 w-1/2 overflow-hidden sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/2 lg:my-3
-                    lg:px-3 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
+                  <div className="my-4 px-4 w-1/2 overflow-hidden sm:my-4 sm:px-4 sm:w-1/2 md:my-4 md:px-4 md:w-1/2
+                    lg:my-3 lg:px-3 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                     <div className="p-8 bg-white">
                       <div className="grid grid-cols-2 gap-2">
                         <div className="col-span-6">
@@ -179,7 +179,8 @@ const Profile = () => {
                             name="password"
                             autoComplete="off"
                             className={`mt-1 focus:ring-teal-500 focus:border-teal-500 block w-full shadow-sm sm:text-sm
-                            border-gray-300 rounded-md form-input${errors.password && touched.password ? ' is-invalid' : ''}`}
+                            border-gray-300 rounded-md
+                            form-input${errors.password && touched.password ? ' is-invalid' : ''}`}
                           />
                           <ErrorMessage name="password" component="span" className="input-error" />
                         </div>

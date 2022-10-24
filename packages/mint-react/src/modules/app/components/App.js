@@ -12,7 +12,7 @@ import routes from '../../../config/routes';
 const App = ({ history }) => (
   <ConnectedRouter history={history}>
     <Switch>
-      {routes.filter(route => get(route, 'public', false)).map((prop, key) => (
+      {routes.filter((route) => get(route, 'public', false)).map((prop, key) => (
         <PublicRoute exact={!!prop.exact} path={prop.path} component={prop.component} key={key} />
       ))}
       <PrivateRoute path='/' component={Container} history={history} />
@@ -22,7 +22,7 @@ const App = ({ history }) => (
 );
 
 App.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
 };
 
 export default App;

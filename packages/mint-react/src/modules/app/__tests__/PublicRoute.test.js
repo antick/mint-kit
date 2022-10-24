@@ -22,7 +22,7 @@ describe('the PublicRoute component', () => {
             component={Login}
           />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(wrapper.find(Login)).toHaveLength(1);
@@ -40,7 +40,7 @@ describe('the PublicRoute component', () => {
             component={Login}
           />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(wrapper.find(Redirect)).toHaveLength(1);

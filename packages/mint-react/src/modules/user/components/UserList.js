@@ -16,7 +16,7 @@ const UserList = () => {
     dispatch(userActions.delete(id));
   }
 
-  const users = useSelector(state => state.userReducer);
+  const users = useSelector((state) => state.userReducer);
 
   return (
     <main className="main-content">
@@ -53,7 +53,7 @@ const UserList = () => {
                 </thead>
 
                 <tbody className="bg-white bg-opacity-70">
-                  {users.users && users.users.results.map(userData => <tr key={userData.id}>
+                  {users.users && users.users.results.map((userData) => <tr key={userData.id}>
                     <td className="px-6 py-5 whitespace-no-wrap border-b border-gray-200">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">

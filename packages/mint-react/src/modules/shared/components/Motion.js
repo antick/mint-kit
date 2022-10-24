@@ -11,7 +11,7 @@ const Motion = ({ children, className, type }) => {
         initial: { y: 100, opacity: 0 },
         animate: { y: 0, opacity: 1 },
         exit: { y: 0, opacity: 0 },
-        transition: { ease: 'easeOut', duration: 0.5 }
+        transition: { ease: 'easeOut', duration: 0.5 },
       };
       break;
 
@@ -20,7 +20,7 @@ const Motion = ({ children, className, type }) => {
         initial: { x: 50, opacity: 0 },
         animate: { x: 0, opacity: 1 },
         exit: { x: 0, opacity: 0 },
-        transition: { ease: 'easeOut', duration: 0.5 }
+        transition: { ease: 'easeOut', duration: 0.5 },
       };
       break;
 
@@ -29,7 +29,7 @@ const Motion = ({ children, className, type }) => {
         initial: { x: 100, opacity: 0 },
         animate: { x: 0, opacity: 1 },
         exit: { x: 0, opacity: 0 },
-        transition: { ease: 'easeOut', duration: 0.5 }
+        transition: { ease: 'easeOut', duration: 0.5 },
       };
       break;
 
@@ -38,7 +38,7 @@ const Motion = ({ children, className, type }) => {
         initial: { y: 100 },
         animate: { y: 0 },
         exit: { y: 0 },
-        transition: { ease: 'easeOut', duration: 0.5 }
+        transition: { ease: 'easeOut', duration: 0.5 },
       };
       break;
 
@@ -47,7 +47,7 @@ const Motion = ({ children, className, type }) => {
         initial: { x: 50 },
         animate: { x: 0 },
         exit: { x: 0 },
-        transition: {}
+        transition: {},
       };
       break;
 
@@ -56,7 +56,7 @@ const Motion = ({ children, className, type }) => {
         initial: { x: 100, opacity: 0 },
         animate: { x: 0, opacity: 1 },
         exit: { x: 0, opacity: 0 },
-        transition: { ease: 'easeOut', duration: 0.5 }
+        transition: { ease: 'easeOut', duration: 0.5 },
       };
       break;
   }
@@ -77,7 +77,7 @@ const Motion = ({ children, className, type }) => {
 Motion.propTypes = {
   children: PropTypes.any,
   className: PropTypes.any,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
 };
 
 export default Motion;

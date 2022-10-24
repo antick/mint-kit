@@ -18,13 +18,13 @@ if (config.reduxDevTools) {
     applyMiddleware(
       routerMiddleware(history),
       thunkMiddleware,
-      loggerMiddleware
-    )
+      loggerMiddleware,
+    ),
   );
 } else {
   middlewaresCombined = applyMiddleware(
     routerMiddleware(history),
-    thunkMiddleware
+    thunkMiddleware,
   );
 }
 

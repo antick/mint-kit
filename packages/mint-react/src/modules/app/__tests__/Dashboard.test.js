@@ -19,7 +19,7 @@ describe('the Dashboard component', () => {
         <Router>
           <Dashboard />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     useDispatchSpy.mockClear();

@@ -22,7 +22,7 @@ describe('the PrivateRoute component', () => {
             component={Container}
           />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(wrapper.find(Container)).toHaveLength(1);
@@ -40,7 +40,7 @@ describe('the PrivateRoute component', () => {
             component={Container}
           />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(wrapper.find(Container)).toHaveLength(0);

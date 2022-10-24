@@ -8,9 +8,9 @@
  * @returns {{payload: undefined, meta: null, type, error: boolean}}
  */
 const action = (type, payload = undefined, error = false, meta = null) => ({
-  type, payload, error, meta
+  type, payload, error, meta,
 });
 
 export {
-  action
+  action,
 };

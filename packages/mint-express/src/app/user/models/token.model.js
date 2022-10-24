@@ -1,7 +1,7 @@
 const { Schema, SchemaTypes, model } = require('mongoose');
 
 const {
-  String, Date, Boolean, ObjectId
+  String, Date, Boolean, ObjectId,
 } = SchemaTypes;
 
 const tokenSchema = new Schema(
@@ -9,34 +9,34 @@ const tokenSchema = new Schema(
     token: {
       type: String,
       required: true,
-      index: true
+      index: true,
     },
     user: {
       type: ObjectId,
       ref: 'User',
-      required: true
+      required: true,
     },
     type: {
       type: String,
       enum: ['refresh', 'resetPassword'],
-      required: true
+      required: true,
     },
     expires: {
       type: Date,
-      required: true
+      required: true,
     },
     blacklisted: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
 const Token = model('Token', tokenSchema);
 
 module.exports = {
-  Token
+  Token,
 };

@@ -14,8 +14,8 @@ export default [
         top: false,
         right: false,
         bottom: false,
-        left: true
-      }
-    }
-  }
+        left: true,
+      },
+    },
+  },
 ];

@@ -14,7 +14,7 @@ if (config.env !== 'test') {
 
 const sendEmail = async (to, subject, text) => {
   const msg = {
-    from: config.email.from, to, subject, text
+    from: config.email.from, to, subject, text,
   };
   await transport.sendMail(msg);
 };
@@ -34,7 +34,7 @@ const sendResetPasswordEmail = async (to, token) => {
   await sendEmail(to, subject, text);
 };
 
-const sendWelcomeEmail = async to => {
+const sendWelcomeEmail = async (to) => {
   const subject = 'Thanks for signing up';
   const url = `${config.webUrl}/login`;
 
@@ -55,5 +55,5 @@ module.exports = {
   sendResetPasswordEmail,
   sendWelcomeEmail,
   transport,
-  sendEmail
+  sendEmail,
 };

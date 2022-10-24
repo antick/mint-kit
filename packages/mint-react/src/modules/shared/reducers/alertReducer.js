@@ -1,7 +1,7 @@
 import {
   SUCCESS,
   ERROR,
-  CLEAR
+  CLEAR,
 } from '../actions/types/alertType';
 
 export default function alert(state = {}, action) {
@@ -9,13 +9,13 @@ export default function alert(state = {}, action) {
     case SUCCESS:
       return {
         type: 'alert-success',
-        message: action.payload
+        message: action.payload,
       };
 
     case ERROR:
       return {
         type: 'alert-danger',
-        message: action.payload
+        message: action.payload,
       };
 
     case CLEAR:

@@ -7,7 +7,7 @@ import {
   AreaChart,
   Tooltip,
   CartesianGrid,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts';
 import faker from '../../shared/utilities/fakerUtility';
 import Motion from '../../shared/components/Motion';
@@ -207,7 +207,7 @@ const Dashboard = () => {
                   <AreaChart
                     data={data}
                     margin={{
-                      top: 10, right: 30, left: 0, bottom: 0
+                      top: 10, right: 30, left: 0, bottom: 0,
                     }}
                   >
                     <CartesianGrid strokeDasharray="3 3" />

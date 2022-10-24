@@ -4,11 +4,15 @@
   "license": "MIT",
   "repository": "https://github.com/antick/mint-kit.git",
   "homepage": "https://github.com/antick/mint-kit",
-  "author": "Pankaj Sanam",
+  "author": {
+    "name": "Pankaj Sanam",
+    "email": "pankaj@desk.sh",
+    "url": "https://pankajsanam.github.io"
+  },
   "description": "A starter kit/boilerplate for all your full-stack apps",
   "keywords": [
     "mint",
-    "mint express",
+    "mint kit",
     "boilerplate",
     "mern",
     "node",
@@ -16,12 +20,12 @@
     "express",
     "api",
     "backend",
-    "monorepo",
-    "nx"
+    "monorepo"
   ],
   "scripts": {
     "start:docusaurus": "pnpm --filter mint-docusaurus start",
     "start:express": "pnpm --filter mint-express start",
+    "start:react": "pnpm --filter mint-react start",
     "coverage": "jest -i --coverage",
     "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
     "docker": "docker-compose -f docker-compose.yml up",

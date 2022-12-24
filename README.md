@@ -1,7 +1,7 @@
 # 💎 Mint Kit 0.1.0 (Heavily Under Development) 💎
 
 <p align="center">
-    <img src="static/logo-light.png" width="100%" />
+    <img src="static/logo-light.png" width="889" alt="mint stack"/>
 </p>
 <br/>
 

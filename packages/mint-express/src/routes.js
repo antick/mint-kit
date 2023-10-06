@@ -7,4 +7,4 @@ const router = express.Router();
 router.use('/auth', authController);
 router.use('/user', userController);
 
-export default router;
+module.exports = router;

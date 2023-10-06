@@ -5,6 +5,7 @@ import useSilentToken from '../../auth/hooks/useSilentToken';
 import auth from '../../auth/utilities/authUtility';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
+  // const isAuthenticated = true;
   const isAuthenticated = auth.isAuthenticated();
 
   useSilentToken();

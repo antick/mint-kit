@@ -1,5 +1,5 @@
 const { Schema, SchemaTypes, model } = require('mongoose');
-const paginate = require('mongoose-paginate-v2');
+// const paginate = require('mongoose-paginate-v2');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
 const { roles } = require('../config/roles');
@@ -53,7 +53,7 @@ const userSchema = new Schema(
   },
 );
 
-userSchema.plugin(paginate);
+// userSchema.plugin(paginate);
 
 /**
  * Check if password matches the user's password

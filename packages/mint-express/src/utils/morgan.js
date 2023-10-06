@@ -24,7 +24,7 @@ const errorHandler = morgan(errorResponseFormat, {
   },
 });
 
-export default {
+module.exports = {
   successHandler,
   errorHandler,
 };

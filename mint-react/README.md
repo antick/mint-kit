@@ -26,13 +26,8 @@ with ESLint. Mint-React has enough features to get you started on any project th
 7. Pre-configured ESLint
 8. Redux with hooks
 9. Jest for unit tests with coverage report
-10. Cypress for end-to-end testing
 
 ## Quick start
-
-Clone the repo:
-
-`git clone https://github.com/antick/mint-react.git`.
 
 Run `pnpm i` to install all the dependencies.
 

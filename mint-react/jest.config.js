@@ -11,7 +11,7 @@ module.exports = {
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['cypress', '.history'],
+  testPathIgnorePatterns: ['.history'],
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
     '\\.svg$': 'svg-jest',

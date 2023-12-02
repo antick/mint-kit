@@ -171,7 +171,6 @@
         "plugin:security/recommended",
         "plugin:jest/recommended",
         "plugin:jest-dom/recommended",
-        "plugin:cypress/recommended",
         "plugin:react/recommended"
       ]
     }

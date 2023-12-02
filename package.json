@@ -6,8 +6,7 @@
   "homepage": "https://github.com/antick/mint-kit",
   "author": {
     "name": "Pankaj Sanam",
-    "email": "pankaj@desk.sh",
-    "url": "https://pankajsanam.github.io"
+    "email": "pankaj@desk.sh"
   },
   "description": "A starter kit/boilerplate for all your full-stack apps",
   "keywords": [
@@ -21,40 +20,5 @@
     "api",
     "backend",
     "monorepo"
-  ],
-  "scripts": {
-    "start:docusaurus": "pnpm --filter mint-docusaurus start",
-    "start:express": "pnpm --filter mint-express start",
-    "start:react": "pnpm --filter mint-react start",
-    "coverage": "jest -i --coverage",
-    "coverage:coveralls": "jest -i --coverage --coverageReporters=text-lcov | coveralls",
-    "docker": "docker-compose -f docker-compose.yml up",
-    "lint": "eslint ./packages/ --ignore-path .gitignore",
-    "lint:fix": "pnpm run lint --fix",
-    "lint:watch": "pnpm run lint --watch",
-    "clean:express": "pnpm --filter mint-express install:clean",
-    "clean:react": "pnpm --filter mint-react install:clean",
-    "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm clean:express && pnpm clean:react && pnpm install"
-  },
-  "dependencies": {
-    "dotenv": "16.3.1",
-    "joi": "17.11.0",
-    "lodash": "4.17.21",
-    "moment": "2.29.4"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
-    "eslint": "8.50.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-cypress": "2.15.1",
-    "eslint-plugin-import": "2.28.1",
-    "eslint-plugin-jest": "27.4.2",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-security": "1.7.1",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "29.7.0"
-  },
-  "workspaces": [
-    "packages/*"
   ]
 }

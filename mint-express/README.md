@@ -1,6 +1,6 @@
-# Mint Express 0.1.0 (MERN Boilerplate/Starter Kit) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fantick%2Fmint-react&text=React-boilerplate&hashtags=react%2Ctailwindcss%2Creactjs)
+# Mint Express 0.1.0
 
-![version](https://img.shields.io/badge/version-0.1.0-teal.svg) ![license](https://img.shields.io/badge/license-MIT-teal.svg) [![GitHub issues open](https://img.shields.io/github/issues/antick/mint-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/antick/mint-react.svg?maxAge=2592000)]()  [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/6jgSTR2pAF)
+![version](https://img.shields.io/badge/version-0.1.0-teal.svg) ![license](https://img.shields.io/badge/license-MIT-teal.svg)
 
 <p align="center">
     <img alt="Mint logo" src="https://i.imgur.com/OuDAqB1.png" width="200px" />
@@ -41,18 +41,10 @@ Quickly start your project with all the essential features required to build a R
 
 ### Installation
 
-Clone the repo:
-
-```bash
-git clone https://github.com/antick/mint-express.git
-cd mint-express
-rm -rf .git
-```
-
 Install the dependencies:
 
 ```bash
-npm i
+pnpm install
 ```
 
 Create a config file for setting environment variables and auth tokens:
@@ -66,36 +58,36 @@ cp .env.example .env
 Run this in your local development environment:
 
 ```bash
-npm run start
+pnpm start
 ```
 
 Run this in production:
 
 ```bash
-npm run start:prod
+pnpm start:prod
 ```
 
 #### Testing
 
 ```bash
 # run all tests
-npm test
+pnpm test
 
 # run all tests in watch mode
-npm test:watch
+pnpm test:watch
 
 # run test coverage
-npm run coverage
+pnpm coverage
 ```
 
 #### Docker
 
 ```bash
 # run docker container in development mode
-npm run docker
+pnpm docker
 
 # run all tests in a docker container
-npm run docker:test
+pnpm docker:test
 ```
 
 Use below string if you want to connect MongoDB Compass with your docker mongo instance:
@@ -106,10 +98,10 @@ Use below string if you want to connect MongoDB Compass with your docker mongo i
 
 ```bash
 # run ESLint
-npm run lint
+pnpm lint
 
 # fix ESLint errors
-npm lint:fix
+pnpm lint:fix
 ```
 
 ## Project Structure
@@ -225,14 +217,6 @@ Contributions are more than welcome! Please check out the [contributing guide](C
 ## Documentation
 
 The documentation for Mint React is available [here](https://antick.github.io/mint).
-
-## Author
-
-Pankaj Sanam - [@pankajsanam](https://twitter.com/pankajsanam)
-
-## Support
-
-<a href="https://www.buymeacoffee.com/pankajsanam" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 25px !important;width: 50px !important;"></a>
 
 ## License
 

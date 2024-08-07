@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import PropTypes from 'prop-types';
 import { get } from 'lodash';
 import NotFound from '../../auth/components/NotFound';
 import Container from './Layout/Container';
@@ -20,9 +19,5 @@ const App = ({ history }) => (
     </Switch>
   </ConnectedRouter>
 );
-
-App.propTypes = {
-  history: PropTypes.object,
-};
 
 export default App;

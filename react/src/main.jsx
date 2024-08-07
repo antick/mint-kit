@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
 import { Provider } from 'react-redux';
 import axios from 'axios';
-import * as serviceWorker from './serviceWorker';
 import store, { history } from './store';
 import * as config from './config';
 import auth from './modules/auth/utilities/authUtility';
@@ -19,11 +19,10 @@ if (token) {
 
 const configuredStore = store();
 
-ReactDOM.render(
-  <Provider store={configuredStore}>
-    <App history={history} />
-  </Provider>,
-  document.getElementById('root'),
-);
-
-serviceWorker.unregister();
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Provider store={configuredStore}>
+      <App history={history} />
+    </Provider>
+  </StrictMode>,
+)

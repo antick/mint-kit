@@ -10,8 +10,7 @@ configured to use the best coding standards and practices along with some out of
 
 :::caution
 
-Currently, I am trying my best to release the first release (v0.1.0) as I am the only one working on it right now in my
-free time.
+Currently, I am trying my best to release the first release as I am the only one working on it right now in my free time.
 
 :::
 

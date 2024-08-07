@@ -1,4 +1,4 @@
-# 🚀 Mint Kit 0.1.0 🚀
+# 🚀 Mint Kit 0.1.0 🚀 (Not Ready for Use Yet)
 
 <p align="center">
   <img src="./logo-light.png" width="889" alt="mint stack" />

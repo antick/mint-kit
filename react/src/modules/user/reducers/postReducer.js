@@ -10,6 +10,7 @@ export const initialState = {
   hasErrors: false,
 };
 
+// eslint-disable-next-line default-param-last
 export default function postsReducer(state = initialState, action) {
   switch (action.type) {
     case GET_POSTS:

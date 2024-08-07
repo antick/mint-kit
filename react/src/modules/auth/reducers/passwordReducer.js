@@ -8,6 +8,7 @@ const initialState = {
   submitting: false,
 };
 
+// eslint-disable-next-line default-param-last
 export default function password(state = initialState, action) {
   switch (action.type) {
     case SUBMITTING:

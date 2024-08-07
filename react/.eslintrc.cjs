@@ -11,6 +11,14 @@ module.exports = {
   },
 
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.jsx'
+        ]
+      }
+    },
     react: {
       version: 'detect'
     }
@@ -28,6 +36,7 @@ module.exports = {
       'error',
       'multiline-arguments'
     ],
+    'import/extensions': 'off',
     'import/newline-after-import': 'off',
     'import/no-extraneous-dependencies': 'off',
     'indent': [

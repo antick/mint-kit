@@ -4,6 +4,7 @@ import {
   REGISTER_FAILURE,
 } from '../../user/actions/types/userType';
 
+// eslint-disable-next-line default-param-last
 export default function registration(state = {}, action) {
   switch (action.type) {
     case REGISTER_REQUEST:

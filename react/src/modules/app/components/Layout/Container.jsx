@@ -1,6 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'; // Update here
 import PropTypes from 'prop-types';
 import TopNavigation from './TopNavigation';
 import LeftNavigation from './LeftNavigation';
@@ -21,17 +21,17 @@ const Container = ({ history }) => (
           <TopNavigation history={history} />
         </header>
 
-        <Switch>
+        <Routes>
           {routes.filter((route) => !get(route, 'public', false))
             .map((prop, key) => (
               <Route
                 exact={!!prop.exact}
                 path={prop.path}
-                component={prop.component}
+                element={<prop.component />} // Update here
                 key={key}
               />
             ))}
-        </Switch>
+        </Routes>
       </section>
     </MainContainer>
   </>

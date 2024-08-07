@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Breadcrumb = ({ title }) => (
   <div className="bg-gray-100 p-3 px-4 sm:px-6 lg:px-8">

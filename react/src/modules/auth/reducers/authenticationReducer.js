@@ -8,6 +8,7 @@ import auth from '../utilities/authUtility';
 const user = auth.getAccessToken();
 const initialState = user ? { loggedIn: true, user } : {};
 
+// eslint-disable-next-line default-param-last
 export default function authentication(state = initialState, action) {
   switch (action.type) {
     case LOGIN_SUCCESS:

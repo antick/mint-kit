@@ -82,8 +82,8 @@ const Dashboard = () => {
           <Motion type="3" className="grid grid-cols-12 gap-4">
             <div className="col-span-12 sm:col-span-6 md:col-span-3">
               <div className="section-bg flex flex-row shadow-sm rounded-lg p-4">
-                <div
-                  className="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-full bg-blue-200 text-blue-500">
+                {/* eslint-disable-next-line max-len */}
+                <div className="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-full bg-blue-200 text-blue-500">
                   {/* eslint-disable-next-line max-len */}
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     {/* eslint-disable-next-line max-len */}
@@ -114,8 +114,8 @@ const Dashboard = () => {
             </div>
             <div className="col-span-12 sm:col-span-6 md:col-span-3">
               <div className="section-bg flex flex-row shadow-sm rounded-lg p-4">
-                <div
-                  className="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-full bg-orange-200 text-orange-500">
+                {/* eslint-disable-next-line max-len */}
+                <div className="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-full bg-orange-200 text-orange-500">
                   {/* eslint-disable-next-line max-len */}
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     {/* eslint-disable-next-line max-len */}

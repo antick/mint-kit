@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom'; // Update here
 import PropTypes from 'prop-types';
 import useSilentToken from '../../auth/hooks/useSilentToken';
 import auth from '../../auth/utilities/authUtility';
@@ -14,7 +14,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route {...rest} render={(props) => (
       isAuthenticated === true
         ? <Component auth={isAuthenticated} {...props} {...rest} />
-        : <Redirect to='/login' />
+        : <Navigate to='/login' replace />
     )} />
   );
 };

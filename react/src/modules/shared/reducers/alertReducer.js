@@ -4,6 +4,7 @@ import {
   CLEAR,
 } from '../actions/types/alertType';
 
+// eslint-disable-next-line default-param-last
 export default function alert(state = {}, action) {
   switch (action.type) {
     case SUCCESS:

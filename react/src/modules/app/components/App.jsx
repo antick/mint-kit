@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'connected-react-router';
 import { get } from 'lodash';
 import NotFound from '../../auth/components/NotFound';
@@ -10,14 +11,18 @@ import routes from '../../../config/routes';
 
 const App = ({ history }) => (
   <ConnectedRouter history={history}>
-    <Switch>
+    <Routes>
       {routes.filter((route) => get(route, 'public', false)).map((prop, key) => (
         <PublicRoute exact={!!prop.exact} path={prop.path} component={prop.component} key={key} />
       ))}
       <PrivateRoute path='/' component={Container} history={history} />
       <Route component={NotFound} />
-    </Switch>
+    </Routes>
   </ConnectedRouter>
 );
+
+App.propTypes = {
+  history: PropTypes.object,
+};
 
 export default App;

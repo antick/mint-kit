@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 const Motion = ({ children, className, type }) => {
   let motionConfig;
@@ -71,6 +72,12 @@ const Motion = ({ children, className, type }) => {
       {children}
     </motion.div>
   );
+};
+
+Motion.propTypes = {
+  children: PropTypes.any,
+  className: PropTypes.string,
+  type: PropTypes.number,
 };
 
 export default Motion;

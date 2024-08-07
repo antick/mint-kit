@@ -12,5 +12,6 @@ const action = (type, payload = undefined, error = false, meta = null) => ({
 });
 
 export {
+  // eslint-disable-next-line import/prefer-default-export
   action,
 };

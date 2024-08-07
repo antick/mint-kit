@@ -1,9 +1,9 @@
-# 💎 Mint Kit 0.1.0 💎
+# 🚀 Mint Kit 0.1.0 🚀
 
 <p align="center">
-    <img src="static/logo-light.png" width="889" alt="mint stack"/>
+  <img src="./logo-light.png" width="889" alt="mint stack" />
 </p>
-<br/>
+<br />
 
 Mint stack provides a complete starter kit for backend/frontend stacks.
 
@@ -14,15 +14,13 @@ Mint stack provides a complete starter kit for backend/frontend stacks.
 ### Backend Stacks:
 
 1. Express and MongoDB
-2. NestJS (WIP)
-3. Deno (Coming Soon)
-4. Bun (Coming Soon)
+2. NestJS (Coming Soon)
+3. Golang (Coming Soon)
 
 ### Frontend Stacks
 
 1. React (CRA and Redux)
-2. Vue (Coming Soon)
-3. Svelte (Coming Soon)
+2. Tailwind CSS
 
 ## Author
 

@@ -1,9 +1,9 @@
 .git
 .gitignore
+
 .history
 .idea
-build
-logs
+
 node_modules
-coverage
+
 npm-debug.log

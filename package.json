@@ -19,6 +19,14 @@
     "express",
     "api",
     "backend",
-    "monorepo"
-  ]
+    "monorepo",
+    "starter kit"
+  ],
+  "scripts": {
+    "i": "pnpm install",
+    "install": "pnpm install:docusaurus && pnpm install:express && pnpm install:react",
+    "install:docusaurus": "cd docusaurus && pnpm install",
+    "install:express": "cd express && pnpm install",
+    "install:react": "cd react && pnpm install"
+  }
 }

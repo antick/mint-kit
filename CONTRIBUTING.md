@@ -4,7 +4,7 @@ Thank you so much for showing interest in contributing to this project. All the 
 
 ## How can I contribute?
 
-If you have an awesome new feature that you want to implement or you found a bug that you would like to fix, here are some instructions to guide you through the process:
+If you have an awesome new feature that you want to implement, or you found a bug that you would like to fix, here are some instructions to guide you through the process:
 
 - Fork the repo to your account
 - Clone this repository

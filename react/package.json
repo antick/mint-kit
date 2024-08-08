@@ -20,6 +20,7 @@
     "install:clean": "rm -rf node_modules/ && rm -rf pnpm-lock.yaml && pnpm install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "2.2.7",
     "@vx/group": "0.0.199",
     "@vx/mock-data": "0.0.199",
     "@vx/scale": "0.0.199",

@@ -37,6 +37,7 @@ module.exports = {
       'multiline-arguments'
     ],
     'import/extensions': 'off',
+    'import/no-cycle': 'off',
     'import/newline-after-import': 'off',
     'import/no-extraneous-dependencies': 'off',
     'indent': [

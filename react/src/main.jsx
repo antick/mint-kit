@@ -17,7 +17,7 @@ if (token) {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
-const configuredStore = store();
+const configuredStore = store;
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

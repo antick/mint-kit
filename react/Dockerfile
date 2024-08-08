@@ -1,7 +1,6 @@
 FROM node:14.15.3-alpine3.12
 
 RUN mkdir -p /home/mint-react
-
 RUN chown node /home/mint-react
 
 USER node

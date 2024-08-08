@@ -15,7 +15,7 @@ const LeftNavigation = () => {
       <Link
         to={route.path}
         key={index}
-        className={`item${location.pathname === route.path ? ' active' : ''}`}
+        className={`item${location?.pathname === route.path ? ' active' : ''}`}
         title={route.menu.title}
       >
         <div className="links">

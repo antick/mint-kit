@@ -1,9 +1,7 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 import { createLogger } from 'redux-logger';
 import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
-import { composeWithDevTools } from '@redux-devtools/extension';
 import * as config from './config';
 import rootReducer from './config/rootReducer';
 
@@ -11,23 +9,16 @@ export const history = createBrowserHistory();
 
 const loggerMiddleware = createLogger();
 
-let middlewaresCombined;
+const middlewares = [routerMiddleware(history)];
 
 if (config.reduxDevTools) {
-  middlewaresCombined = composeWithDevTools(
-    applyMiddleware(
-      routerMiddleware(history),
-      thunkMiddleware,
-      loggerMiddleware,
-    ),
-  );
-} else {
-  middlewaresCombined = applyMiddleware(
-    routerMiddleware(history),
-    thunkMiddleware,
-  );
+  middlewares.push(loggerMiddleware);
 }
 
-export default function store() {
-  return createStore(rootReducer(history), compose(middlewaresCombined));
-}
+const store = configureStore({
+  reducer: rootReducer(history),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+  devTools: config.reduxDevTools,
+});
+
+export default store;

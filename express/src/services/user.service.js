@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
-const BadRequestError = require('../../../middlewares/errors/BadRequestError');
-const NotFoundError = require('../../../middlewares/errors/NotFoundError');
+const BadRequestError = require('../middlewares/errors/BadRequestError');
+const NotFoundError = require('../middlewares/errors/NotFoundError');
 const User = require('../models/user.model');
 
 const unlinkAsync = promisify(fs.unlink);

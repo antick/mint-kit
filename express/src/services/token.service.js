@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
-const config = require('../../../config');
+const config = require('../config');
 const userService = require('./user.service');
 const Token = require('../models/token.model');
-const NotFoundError = require('../../../middlewares/errors/NotFoundError');
+const NotFoundError = require('../middlewares/errors/NotFoundError');
 
 const generateToken = (userId, expires, secret = config.jwt.secret) => {
   const payload = {

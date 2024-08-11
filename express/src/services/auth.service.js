@@ -1,7 +1,7 @@
 const tokenService = require('./token.service');
 const userService = require('./user.service');
 const Token = require('../models/token.model');
-const AuthError = require('../../../middlewares/errors/AuthError');
+const AuthError = require('../middlewares/errors/AuthError');
 
 const authenticate = async (email, password) => {
   const user = await userService.getUserByEmail(email);

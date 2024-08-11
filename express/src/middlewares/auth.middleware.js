@@ -1,6 +1,6 @@
 const passport = require('passport');
-const AuthError = require('../../../middlewares/errors/AuthError');
-const ForbiddenError = require('../../../middlewares/errors/ForbiddenError');
+const AuthError = require('./errors/AuthError');
+const ForbiddenError = require('./errors/ForbiddenError');
 const { rolePermissions } = require('../config/roles');
 
 const authorization = (req, resolve, reject, requiredPermissions) => async (err, user, info) => {

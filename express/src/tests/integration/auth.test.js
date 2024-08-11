@@ -1,16 +1,17 @@
+/* eslint-disable no-underscore-dangle */
 const request = require('supertest');
 const faker = require('faker');
 const httpStatus = require('http-status');
 const httpMocks = require('node-mocks-http');
 const moment = require('moment');
 const bcrypt = require('bcryptjs');
-const app = require('../../../../main');
-const config = require('../../../../config');
+const app = require('../../main');
+const config = require('../../config');
 const auth = require('../../middlewares/auth.middleware');
 const tokenService = require('../../services/token.service');
 const emailService = require('../../services/email.service');
-const BaseError = require('../../../../middlewares/errors/BaseError');
-const setupTestDB = require('../../../../tests/setupTestDb');
+const BaseError = require('../../middlewares/errors/BaseError');
+const setupTestDB = require('../setupTestDb');
 const User = require('../../models/user.model');
 const Token = require('../../models/token.model');
 const { rolePermissions } = require('../../config/roles');
@@ -318,7 +319,10 @@ describe('auth routes', () => {
       expect(sendResetPasswordEmailSpy).toHaveBeenCalledWith(userOne.email, expect.any(String));
 
       const resetPasswordToken = sendResetPasswordEmailSpy.mock.calls[0][1];
-      const dbResetPasswordTokenDoc = await Token.findOne({ token: resetPasswordToken, user: userOne._id });
+      const dbResetPasswordTokenDoc = await Token.findOne({
+        token: resetPasswordToken,
+        user: userOne._id,
+      });
 
       expect(dbResetPasswordTokenDoc).toBeDefined();
     });

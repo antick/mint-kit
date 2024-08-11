@@ -6,6 +6,7 @@ class BadRequestError {
     this.statusCode = httpStatus.BAD_REQUEST;
     this.message = message;
 
+    // eslint-disable-next-line no-constructor-return
     return new BaseError(this.statusCode, this.message);
   }
 }

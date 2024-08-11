@@ -1,12 +1,12 @@
 const _ = require('lodash');
 const express = require('express');
 const httpStatus = require('http-status');
-const validationMiddleware = require('../../../middlewares/validation.middleware');
+const validationMiddleware = require('../middlewares/validation.middleware');
 const authMiddleware = require('../middlewares/auth.middleware');
 const userValidation = require('./validators/user.validator');
 const uploadMiddleware = require('../middlewares/upload.middleware');
-const NotFoundError = require('../../../middlewares/errors/NotFoundError');
-const { controller, pick } = require('../../../utils');
+const NotFoundError = require('../middlewares/errors/NotFoundError');
+const { controller, pick } = require('../utils');
 const userService = require('../services/user.service');
 const tokenService = require('../services/token.service');
 
@@ -67,11 +67,13 @@ userController
 
     res.send(user);
   }))
+  // eslint-disable-next-line max-len
   .patch(authMiddleware('manageUsers'), validationMiddleware(userValidation.updateUser), controller(async (req, res) => {
     const user = await userService.updateUserById(req.params.userId, req.body);
 
     res.send(user);
   }))
+  // eslint-disable-next-line max-len
   .delete(authMiddleware('manageUsers'), validationMiddleware(userValidation.deleteUser), controller(async (req, res) => {
     await userService.deleteUserById(req.params.userId);
 

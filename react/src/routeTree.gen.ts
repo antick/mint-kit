@@ -13,17 +13,25 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SignUpImport } from './routes/sign-up'
+import { Route as LoginImport } from './routes/login'
+import { Route as ForgotPasswordImport } from './routes/forgot-password'
+import { Route as ProtectedImport } from './routes/_protected'
+import { Route as IndexImport } from './routes/index'
 
 // Create Virtual Routes
 
 const AboutLazyImport = createFileRoute('/about')()
-const IndexLazyImport = createFileRoute('/')()
-const UserResetPasswordLazyImport = createFileRoute('/user/reset-password')()
-const authSignUpLazyImport = createFileRoute('/(auth)/sign-up')()
-const authLoginLazyImport = createFileRoute('/(auth)/login')()
-const authForgotPasswordLazyImport = createFileRoute(
-  '/(auth)/forgot-password',
+const ProtectedUsersLazyImport = createFileRoute('/_protected/users')()
+const ProtectedTasksLazyImport = createFileRoute('/_protected/tasks')()
+const ProtectedSettingsLazyImport = createFileRoute('/_protected/settings')()
+const ProtectedResetPasswordLazyImport = createFileRoute(
+  '/_protected/reset-password',
 )()
+const ProtectedProfileLazyImport = createFileRoute('/_protected/profile')()
+const ProtectedPostsLazyImport = createFileRoute('/_protected/posts')()
+const ProtectedDashboardLazyImport = createFileRoute('/_protected/dashboard')()
+const ProtectedCampaignLazyImport = createFileRoute('/_protected/campaign')()
 
 // Create/Update Routes
 
@@ -32,40 +40,88 @@ const AboutLazyRoute = AboutLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
 
-const IndexLazyRoute = IndexLazyImport.update({
+const SignUpRoute = SignUpImport.update({
+  path: '/sign-up',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginRoute = LoginImport.update({
+  path: '/login',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ForgotPasswordRoute = ForgotPasswordImport.update({
+  path: '/forgot-password',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProtectedRoute = ProtectedImport.update({
+  id: '/_protected',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+} as any)
 
-const UserResetPasswordLazyRoute = UserResetPasswordLazyImport.update({
-  path: '/user/reset-password',
-  getParentRoute: () => rootRoute,
+const ProtectedUsersLazyRoute = ProtectedUsersLazyImport.update({
+  path: '/users',
+  getParentRoute: () => ProtectedRoute,
 } as any).lazy(() =>
-  import('./routes/user/reset-password.lazy').then((d) => d.Route),
+  import('./routes/_protected/users.lazy').then((d) => d.Route),
 )
 
-const authSignUpLazyRoute = authSignUpLazyImport
-  .update({
-    path: '/sign-up',
-    getParentRoute: () => rootRoute,
-  } as any)
-  .lazy(() => import('./routes/(auth)/sign-up.lazy').then((d) => d.Route))
+const ProtectedTasksLazyRoute = ProtectedTasksLazyImport.update({
+  path: '/tasks',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/tasks.lazy').then((d) => d.Route),
+)
 
-const authLoginLazyRoute = authLoginLazyImport
-  .update({
-    path: '/login',
-    getParentRoute: () => rootRoute,
-  } as any)
-  .lazy(() => import('./routes/(auth)/login.lazy').then((d) => d.Route))
+const ProtectedSettingsLazyRoute = ProtectedSettingsLazyImport.update({
+  path: '/settings',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/settings.lazy').then((d) => d.Route),
+)
 
-const authForgotPasswordLazyRoute = authForgotPasswordLazyImport
-  .update({
-    path: '/forgot-password',
-    getParentRoute: () => rootRoute,
-  } as any)
-  .lazy(() =>
-    import('./routes/(auth)/forgot-password.lazy').then((d) => d.Route),
-  )
+const ProtectedResetPasswordLazyRoute = ProtectedResetPasswordLazyImport.update(
+  {
+    path: '/reset-password',
+    getParentRoute: () => ProtectedRoute,
+  } as any,
+).lazy(() =>
+  import('./routes/_protected/reset-password.lazy').then((d) => d.Route),
+)
+
+const ProtectedProfileLazyRoute = ProtectedProfileLazyImport.update({
+  path: '/profile',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/profile.lazy').then((d) => d.Route),
+)
+
+const ProtectedPostsLazyRoute = ProtectedPostsLazyImport.update({
+  path: '/posts',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/posts.lazy').then((d) => d.Route),
+)
+
+const ProtectedDashboardLazyRoute = ProtectedDashboardLazyImport.update({
+  path: '/dashboard',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/dashboard.lazy').then((d) => d.Route),
+)
+
+const ProtectedCampaignLazyRoute = ProtectedCampaignLazyImport.update({
+  path: '/campaign',
+  getParentRoute: () => ProtectedRoute,
+} as any).lazy(() =>
+  import('./routes/_protected/campaign.lazy').then((d) => d.Route),
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -75,7 +131,35 @@ declare module '@tanstack/react-router' {
       id: '/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/_protected': {
+      id: '/_protected'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof ProtectedImport
+      parentRoute: typeof rootRoute
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordImport
+      parentRoute: typeof rootRoute
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/sign-up': {
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpImport
       parentRoute: typeof rootRoute
     }
     '/about': {
@@ -85,33 +169,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutLazyImport
       parentRoute: typeof rootRoute
     }
-    '/(auth)/forgot-password': {
-      id: '/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/forgot-password'
-      preLoaderRoute: typeof authForgotPasswordLazyImport
-      parentRoute: typeof rootRoute
+    '/_protected/campaign': {
+      id: '/_protected/campaign'
+      path: '/campaign'
+      fullPath: '/campaign'
+      preLoaderRoute: typeof ProtectedCampaignLazyImport
+      parentRoute: typeof ProtectedImport
     }
-    '/(auth)/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof authLoginLazyImport
-      parentRoute: typeof rootRoute
+    '/_protected/dashboard': {
+      id: '/_protected/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof ProtectedDashboardLazyImport
+      parentRoute: typeof ProtectedImport
     }
-    '/(auth)/sign-up': {
-      id: '/sign-up'
-      path: '/sign-up'
-      fullPath: '/sign-up'
-      preLoaderRoute: typeof authSignUpLazyImport
-      parentRoute: typeof rootRoute
+    '/_protected/posts': {
+      id: '/_protected/posts'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof ProtectedPostsLazyImport
+      parentRoute: typeof ProtectedImport
     }
-    '/user/reset-password': {
-      id: '/user/reset-password'
-      path: '/user/reset-password'
-      fullPath: '/user/reset-password'
-      preLoaderRoute: typeof UserResetPasswordLazyImport
-      parentRoute: typeof rootRoute
+    '/_protected/profile': {
+      id: '/_protected/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProtectedProfileLazyImport
+      parentRoute: typeof ProtectedImport
+    }
+    '/_protected/reset-password': {
+      id: '/_protected/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ProtectedResetPasswordLazyImport
+      parentRoute: typeof ProtectedImport
+    }
+    '/_protected/settings': {
+      id: '/_protected/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof ProtectedSettingsLazyImport
+      parentRoute: typeof ProtectedImport
+    }
+    '/_protected/tasks': {
+      id: '/_protected/tasks'
+      path: '/tasks'
+      fullPath: '/tasks'
+      preLoaderRoute: typeof ProtectedTasksLazyImport
+      parentRoute: typeof ProtectedImport
+    }
+    '/_protected/users': {
+      id: '/_protected/users'
+      path: '/users'
+      fullPath: '/users'
+      preLoaderRoute: typeof ProtectedUsersLazyImport
+      parentRoute: typeof ProtectedImport
     }
   }
 }
@@ -119,12 +231,21 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
-  IndexLazyRoute,
+  IndexRoute,
+  ProtectedRoute: ProtectedRoute.addChildren({
+    ProtectedCampaignLazyRoute,
+    ProtectedDashboardLazyRoute,
+    ProtectedPostsLazyRoute,
+    ProtectedProfileLazyRoute,
+    ProtectedResetPasswordLazyRoute,
+    ProtectedSettingsLazyRoute,
+    ProtectedTasksLazyRoute,
+    ProtectedUsersLazyRoute,
+  }),
+  ForgotPasswordRoute,
+  LoginRoute,
+  SignUpRoute,
   AboutLazyRoute,
-  authForgotPasswordLazyRoute,
-  authLoginLazyRoute,
-  authSignUpLazyRoute,
-  UserResetPasswordLazyRoute,
 })
 
 /* prettier-ignore-end */
@@ -136,30 +257,72 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about",
+        "/_protected",
         "/forgot-password",
         "/login",
         "/sign-up",
-        "/user/reset-password"
+        "/about"
       ]
     },
     "/": {
-      "filePath": "index.lazy.tsx"
+      "filePath": "index.tsx"
+    },
+    "/_protected": {
+      "filePath": "_protected.tsx",
+      "children": [
+        "/_protected/campaign",
+        "/_protected/dashboard",
+        "/_protected/posts",
+        "/_protected/profile",
+        "/_protected/reset-password",
+        "/_protected/settings",
+        "/_protected/tasks",
+        "/_protected/users"
+      ]
+    },
+    "/forgot-password": {
+      "filePath": "forgot-password.tsx"
+    },
+    "/login": {
+      "filePath": "login.tsx"
+    },
+    "/sign-up": {
+      "filePath": "sign-up.tsx"
     },
     "/about": {
       "filePath": "about.lazy.tsx"
     },
-    "/forgot-password": {
-      "filePath": "(auth)/forgot-password.lazy.tsx"
+    "/_protected/campaign": {
+      "filePath": "_protected/campaign.lazy.tsx",
+      "parent": "/_protected"
     },
-    "/login": {
-      "filePath": "(auth)/login.lazy.tsx"
+    "/_protected/dashboard": {
+      "filePath": "_protected/dashboard.lazy.tsx",
+      "parent": "/_protected"
     },
-    "/sign-up": {
-      "filePath": "(auth)/sign-up.lazy.tsx"
+    "/_protected/posts": {
+      "filePath": "_protected/posts.lazy.tsx",
+      "parent": "/_protected"
     },
-    "/user/reset-password": {
-      "filePath": "user/reset-password.lazy.tsx"
+    "/_protected/profile": {
+      "filePath": "_protected/profile.lazy.tsx",
+      "parent": "/_protected"
+    },
+    "/_protected/reset-password": {
+      "filePath": "_protected/reset-password.lazy.tsx",
+      "parent": "/_protected"
+    },
+    "/_protected/settings": {
+      "filePath": "_protected/settings.lazy.tsx",
+      "parent": "/_protected"
+    },
+    "/_protected/tasks": {
+      "filePath": "_protected/tasks.lazy.tsx",
+      "parent": "/_protected"
+    },
+    "/_protected/users": {
+      "filePath": "_protected/users.lazy.tsx",
+      "parent": "/_protected"
     }
   }
 }

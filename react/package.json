@@ -5,7 +5,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env PORT=3001 vite",
+    "start": "vite",
     "dev": "pnpm run routes:watch && vite",
     "build": "pnpm run routes:generate && tsc -b && vite build",
     "lint": "eslint ./src/ --ignore-path .gitignore",
